@@ -19,6 +19,10 @@ public class Ground : MonoBehaviour
         {
             leaves.Add(c.gameObject.GetComponent<Flower>());
         }
+        if (c.gameObject.GetComponent<WindowsObject>() != null)
+        {
+            Destroy(c.gameObject);
+        }
     }
 
     void Update()
