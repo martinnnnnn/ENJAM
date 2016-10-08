@@ -21,11 +21,4 @@ public class Flower : MonoBehaviour
         GetComponent<Rigidbody2D>().drag = Random.Range(m_fLinearDragMinBound, m_fLinearDragMaxBound);
         //Destroy(gameObject, m_fTimeBeforeDestruction);
     }
-	
-
-    
-
-
-
-
 }
