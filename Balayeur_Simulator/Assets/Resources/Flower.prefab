@@ -120,4 +120,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_fLinearDragMinBound: -5
   m_fLinearDragMaxBound: 5
+  m_sTabSprites:
+  - {fileID: 21300000, guid: 2d2c4fcb358ea604ab309a3ec73602b2, type: 3}
+  - {fileID: 21300000, guid: f4c8d528e6924384ca04755fc1af89f8, type: 3}
+  - {fileID: 21300000, guid: 9fc5bae72cf5e054ebd8dc453164feb1, type: 3}
+  - {fileID: 21300000, guid: e415baf804a91c74ea5ddf5e33562faa, type: 3}
+  - {fileID: 21300000, guid: 65e1bb39c2cc14d439672322eb4ed60c, type: 3}
+  - {fileID: 21300000, guid: 89d74770c7f6f834082790f40e718b5f, type: 3}
+  - {fileID: 21300000, guid: 1e23346fbf42e3f438edf27d3231e364, type: 3}
+  m_fMinRotationBound: -1000
+  m_fMaxRotationBound: 1000
   isDead: 0
