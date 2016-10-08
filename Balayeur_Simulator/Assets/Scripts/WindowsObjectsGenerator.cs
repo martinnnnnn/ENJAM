@@ -9,7 +9,7 @@ public class WindowsObjectsGenerator : MonoBehaviour {
 
 
 
-    public static GameObject objectPrefab;
+    public GameObject objectPrefab;
 
     public List<GameObject> windowsPositions;
 
@@ -24,6 +24,14 @@ public class WindowsObjectsGenerator : MonoBehaviour {
     
     public float speedingValue;
 
+    public string img_inversement;
+    public string img_slow;
+    public string img_speed;
+    public string img_sweep;
+    private Sprite sprite_inversement;
+    private Sprite sprite_slow;
+    private Sprite sprite_speed;
+    private Sprite sprite_sweep;
 
     //[SerializeField]
     private Vector2 m_v2Position;
@@ -37,16 +45,16 @@ public class WindowsObjectsGenerator : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-
+        sprite_inversement = Resources.Load(img_inversement, typeof(Sprite)) as Sprite;
+        sprite_slow = Resources.Load(img_slow, typeof(Sprite)) as Sprite;
+        sprite_speed = Resources.Load(img_speed, typeof(Sprite)) as Sprite;
+        sprite_sweep = Resources.Load(img_sweep, typeof(Sprite)) as Sprite;
     }
 
 
 
     void Update()
     {
-        // generer objet
-        
-
         if (Time.time > timeTillNextSpawn)
         {
             int spawningPosition = Random.Range( 0, windowsPositions.Count - 1 );
@@ -55,7 +63,6 @@ public class WindowsObjectsGenerator : MonoBehaviour {
 
 
             CreateWindowsObjects(windowsPositions[spawningPosition].transform.position, eventType);
-
         }
     }
 
@@ -69,5 +76,23 @@ public class WindowsObjectsGenerator : MonoBehaviour {
         windowsObject.eventLenght = eventLenght;
         windowsObject.slowingValue = slowingValue;
         windowsObject.speedingValue = speedingValue;
+        gObject.AddComponent<SpriteRenderer>();
+        switch (type)
+        {
+            case EventObject.INSERVEMENT:
+                gObject.GetComponent<SpriteRenderer>().sprite = sprite_inversement;
+                break;
+            case EventObject.DEPLACEMENT_SLOW:
+                gObject.GetComponent<SpriteRenderer>().sprite = sprite_slow;
+                break;
+            case EventObject.DEPLACEMENT_SPEED:
+                gObject.GetComponent<SpriteRenderer>().sprite = sprite_speed;
+                break;
+            case EventObject.SWEEP_BOOST:
+                gObject.GetComponent<SpriteRenderer>().sprite = sprite_sweep;
+                break;
+        }
+        gObject.AddComponent<PolygonCollider2D>();
+        gObject.AddComponent<Rigidbody2D>();
     }
 }
