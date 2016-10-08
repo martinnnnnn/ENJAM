@@ -17,8 +17,9 @@ public class SpriteAnim : MonoBehaviour
         {
             AnimatedGameObject = this.gameObject;
         }
-        PlayAnimation(0, 0.25f);
+        PlayAnimation(2, 0.05f);
     }
+
 
     public void PlayAnimation(int ID, float secPerFrame)
     {
@@ -36,9 +37,10 @@ public class SpriteAnim : MonoBehaviour
 
     IEnumerator AnimateSprite(int ID)
     {
+        int nextID;
         switch (ID)
         {
-            default:
+            case 0:
                 yield return new WaitForSeconds(SecsPerFrame);
                 AnimatedGameObject.GetComponent<SpriteRenderer>().sprite
                 = AnimationSets[ID].Anim_Sprites[Cur_SpriteID];
@@ -47,9 +49,52 @@ public class SpriteAnim : MonoBehaviour
                 {
                     Cur_SpriteID = 0;
                 }
-                StartCoroutine("AnimateSprite", ID);
+                nextID = returnNextId();
+                if (nextID != ID) Cur_SpriteID = 0;
+                StartCoroutine("AnimateSprite", returnNextId());
+                break;
+            case 1:
+                yield return new WaitForSeconds(SecsPerFrame);
+                AnimatedGameObject.GetComponent<SpriteRenderer>().sprite
+                = AnimationSets[ID].Anim_Sprites[Cur_SpriteID];
+                Cur_SpriteID++;
+                if (Cur_SpriteID >= AnimationSets[ID].Anim_Sprites.Length)
+                {
+                    Cur_SpriteID = 0;
+                }
+                nextID = returnNextId();
+                if (nextID != ID) Cur_SpriteID = 0;
+                StartCoroutine("AnimateSprite", nextID);
+                break;
+            case 2:                yield return new WaitForSeconds(SecsPerFrame);
+                Debug.Log("start bug ID : " + ID + " / Cur_SpriteID : " + Cur_SpriteID);
+                AnimatedGameObject.GetComponent<SpriteRenderer>().sprite
+                = AnimationSets[ID].Anim_Sprites[Cur_SpriteID];
+                Cur_SpriteID++;
+                if (Cur_SpriteID >= AnimationSets[ID].Anim_Sprites.Length)
+                {
+                    Cur_SpriteID = 0;
+                }
+                Debug.Log("endbug");
+                nextID = returnNextId();
+                if (nextID != ID) Cur_SpriteID = 0;
+                StartCoroutine("AnimateSprite", returnNextId());
                 break;
         }
+
+    }
+
+    int returnNextId()
+    {
+        if (Input.GetAxis("Horizontal") < 0)
+        {
+            return 1;
+        }
+        else if (Input.GetAxis("Horizontal") > 0)
+        {
+            return 0;
+        }
+        return 2;
     }
 }
 
