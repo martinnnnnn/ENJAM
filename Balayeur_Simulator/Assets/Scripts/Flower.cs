@@ -3,14 +3,17 @@ using System.Collections;
 
 public class Flower : MonoBehaviour
 {
-    [SerializeField]
-    private float m_fTimeBeforeDestruction;
+    //[SerializeField]
+    //private float m_fTimeBeforeDestruction;
 
     [SerializeField]
     private float m_fLinearDragMinBound;
 
     [SerializeField]
     private float m_fLinearDragMaxBound;
+
+    [HideInInspector]
+    public bool isDead = false;
 
     // Use this for initialization
     void Start ()
@@ -19,9 +22,10 @@ public class Flower : MonoBehaviour
         //Destroy(gameObject, m_fTimeBeforeDestruction);
     }
 	
-	// Update is called once per frame
-	void Update ()
-    {
-	
-	}
+
+    
+
+
+
+
 }
