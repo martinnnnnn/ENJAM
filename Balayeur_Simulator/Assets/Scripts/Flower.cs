@@ -7,12 +7,6 @@ public class Flower : MonoBehaviour
     //private float m_fTimeBeforeDestruction;
 
     [SerializeField]
-    private float m_fLinearDragMinBound;
-
-    [SerializeField]
-    private float m_fLinearDragMaxBound;
-
-    [SerializeField]
     private Sprite[] m_sTabSprites;
 
     [SerializeField]
@@ -27,8 +21,14 @@ public class Flower : MonoBehaviour
     //[SerializeField]
     private int m_iRandomDirection;
 
+    [SerializeField]
+    private float m_fDeltaIncrementation;
+
     [HideInInspector]
     public bool isDead = false;
+
+    [SerializeField]
+    private float m_fTime;
 
     // Use this for initialization
     void Start ()
@@ -37,8 +37,16 @@ public class Flower : MonoBehaviour
         m_fRandomRotation = Random.Range(m_fMinRotationBound, m_fMaxRotationBound);
         int _iIndice = Random.Range(0, m_sTabSprites.Length);
         GetComponent<SpriteRenderer>().sprite = m_sTabSprites[_iIndice];
-        GetComponent<Rigidbody2D>().drag = Random.Range(m_fLinearDragMinBound, m_fLinearDragMaxBound);
+
+        //InvokeRepeating("IncreaseBounds", m_fTime, m_fTime);
+
+        GameObject _goManager = GameObject.FindGameObjectWithTag("manager");
+        IncrementBounds _ibScript = _goManager.GetComponent<IncrementBounds>();
+        GetComponent<Rigidbody2D>().drag = Random.Range(_ibScript.m_fLinearDragMinBound, _ibScript.m_fLinearDragMaxBound);
+
         //Destroy(gameObject, m_fTimeBeforeDestruction);
+
+
     }
 
     void Update()
