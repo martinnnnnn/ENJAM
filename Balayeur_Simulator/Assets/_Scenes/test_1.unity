@@ -90,120 +90,111 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &104735260
+--- !u!1001 &50523315
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013736239450, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_Name
+      value: WindZone (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013736239450, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1 &342896727
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 104735263}
-  - 61: {fileID: 104735262}
-  - 114: {fileID: 104735261}
+  - 4: {fileID: 342896729}
+  - 114: {fileID: 342896728}
   m_Layer: 0
-  m_Name: WindZone (5)
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &104735261
+--- !u!114 &342896728
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 104735260}
-  m_Enabled: 1
+  m_GameObject: {fileID: 342896727}
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a973c8f6c6e27147ad4314ab1c6da62, type: 3}
+  m_Script: {fileID: 11500000, guid: 3627f1aba45b4f44da16eebbc8cc6d7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_fMinForceBound: 0
-  m_fMaxForceBound: 0
---- !u!61 &104735262
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 104735260}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
---- !u!4 &104735263
+  m_iMaxNumberOfWindZones: 10
+  m_goWindZone: {fileID: 1000013736239450, guid: f8595deccf900b34792b5d3f05f39aba,
+    type: 2}
+--- !u!4 &342896729
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 104735260}
+  m_GameObject: {fileID: 342896727}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.58, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalPosition: {x: -0.9574108, y: 0.004866319, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
---- !u!1 &231363833
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 231363836}
-  - 61: {fileID: 231363835}
-  - 114: {fileID: 231363834}
-  m_Layer: 0
-  m_Name: WindZone (6)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &231363834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 231363833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a973c8f6c6e27147ad4314ab1c6da62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_fMinForceBound: 0
-  m_fMaxForceBound: 0
---- !u!61 &231363835
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 231363833}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
---- !u!4 &231363836
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 231363833}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.58, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 5
 --- !u!1001 &504557144
 Prefab:
   m_ObjectHideFlags: 0
@@ -241,7 +232,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013255255232, guid: 0c03fc0d0f3b97c4caa084913f00f884, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 61000013417636668, guid: 0c03fc0d0f3b97c4caa084913f00f884,
         type: 2}
@@ -284,177 +275,184 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0c03fc0d0f3b97c4caa084913f00f884, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &632360137
-GameObject:
+--- !u!1001 &710264168
+Prefab:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 632360140}
-  - 61: {fileID: 632360139}
-  - 114: {fileID: 632360138}
-  m_Layer: 0
-  m_Name: WindZone (8)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &632360138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 632360137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a973c8f6c6e27147ad4314ab1c6da62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_fMinForceBound: 0
-  m_fMaxForceBound: 0
---- !u!61 &632360139
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 632360137}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
---- !u!4 &632360140
-Transform:
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013736239450, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_Name
+      value: WindZone (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013736239450, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &958647389
+Prefab:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 632360137}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.58, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
---- !u!1 &688558756
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 688558759}
-  - 61: {fileID: 688558758}
-  - 114: {fileID: 688558757}
-  m_Layer: 0
-  m_Name: WindZone (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &688558757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 688558756}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a973c8f6c6e27147ad4314ab1c6da62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_fMinForceBound: 0
-  m_fMaxForceBound: 0
---- !u!61 &688558758
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 688558756}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
---- !u!4 &688558759
-Transform:
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -4.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013736239450, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_Name
+      value: WindZone (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013736239450, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &964975113
+Prefab:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 688558756}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.58, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
---- !u!1 &734310742
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 734310745}
-  - 61: {fileID: 734310744}
-  - 114: {fileID: 734310743}
-  m_Layer: 0
-  m_Name: WindZone (4)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &734310743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 734310742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a973c8f6c6e27147ad4314ab1c6da62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_fMinForceBound: 0
-  m_fMaxForceBound: 0
---- !u!61 &734310744
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 734310742}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
---- !u!4 &734310745
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 734310742}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.58, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 14.499974
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &984557474
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,7 +514,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 4
 --- !u!1 &1008258579
 GameObject:
   m_ObjectHideFlags: 0
@@ -604,63 +602,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!1 &1119430868
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1119430871}
-  - 61: {fileID: 1119430870}
-  - 114: {fileID: 1119430869}
-  m_Layer: 0
-  m_Name: WindZone (9)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1119430869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1119430868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a973c8f6c6e27147ad4314ab1c6da62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_fMinForceBound: 0
-  m_fMaxForceBound: 0
---- !u!61 &1119430870
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1119430868}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
---- !u!4 &1119430871
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1119430868}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.58, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
 --- !u!1001 &1531716529
 Prefab:
   m_ObjectHideFlags: 0
@@ -705,180 +646,14 @@ Prefab:
       propertyPath: m_fFrequence
       value: 0.023
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013478727368, guid: 065d554a8fb3afb4e9d08f0f50ef3583,
+        type: 2}
+      propertyPath: m_fTime
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 065d554a8fb3afb4e9d08f0f50ef3583, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1590913883
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1590913886}
-  - 61: {fileID: 1590913885}
-  - 114: {fileID: 1590913884}
-  m_Layer: 0
-  m_Name: WindZone (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1590913884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1590913883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a973c8f6c6e27147ad4314ab1c6da62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_fMinForceBound: 0
-  m_fMaxForceBound: 0
---- !u!61 &1590913885
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1590913883}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
---- !u!4 &1590913886
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1590913883}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.58, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
---- !u!1 &1650976960
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1650976963}
-  - 61: {fileID: 1650976962}
-  - 114: {fileID: 1650976961}
-  m_Layer: 0
-  m_Name: WindZone (7)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1650976961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1650976960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a973c8f6c6e27147ad4314ab1c6da62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_fMinForceBound: 0
-  m_fMaxForceBound: 0
---- !u!61 &1650976962
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1650976960}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
---- !u!4 &1650976963
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1650976960}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.58, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
---- !u!1 &1773123802
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1773123805}
-  - 61: {fileID: 1773123804}
-  - 114: {fileID: 1773123803}
-  m_Layer: 0
-  m_Name: WindZone
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1773123803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1773123802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a973c8f6c6e27147ad4314ab1c6da62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_fMinForceBound: 0
-  m_fMaxForceBound: 0
---- !u!61 &1773123804
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1773123802}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
---- !u!4 &1773123805
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1773123802}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.58, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
 --- !u!1001 &1790267588
 Prefab:
   m_ObjectHideFlags: 0
@@ -940,60 +715,65 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50b58c453c7eaf84bafd0ccb875d5d11, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1983413510
-GameObject:
+--- !u!1001 &1905424521
+Prefab:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1983413513}
-  - 61: {fileID: 1983413512}
-  - 114: {fileID: 1983413511}
-  m_Layer: 0
-  m_Name: WindZone (3)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1983413511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1983413510}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a973c8f6c6e27147ad4314ab1c6da62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_fMinForceBound: 0
-  m_fMaxForceBound: 0
---- !u!61 &1983413512
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1983413510}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
---- !u!4 &1983413513
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1983413510}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.58, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -8.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013979903236, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013736239450, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_Name
+      value: WindZone (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013736239450, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f8595deccf900b34792b5d3f05f39aba, type: 2}
+  m_IsPrefabParent: 0

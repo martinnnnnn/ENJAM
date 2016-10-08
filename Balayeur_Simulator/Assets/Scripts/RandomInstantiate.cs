@@ -3,8 +3,8 @@ using System.Collections;
 
 public class RandomInstantiate : MonoBehaviour
 {
-	[SerializeField]
-	private GameObject m_goFlower;
+    [SerializeField]
+    private GameObject m_goFlower;
 
     /*SerializeField]
     private int m_iMaxLeavesCpt;
@@ -31,8 +31,14 @@ public class RandomInstantiate : MonoBehaviour
     [Range(0.0f, 1.0f)]
     private float m_fFrequence;
 
+    [SerializeField]
+    private float m_fTime;
+
+    [SerializeField]
+    private float m_fDeltaIncrementation;
+
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         /*GameObject _goLeaf;
         _goLeaf = Instantiate(m_goFlower, transform.position, transform.rotation) as GameObject;
@@ -44,20 +50,22 @@ public class RandomInstantiate : MonoBehaviour
         m_fNextActionTime = 0f;
         m_fGameWidth = Camera.main.orthographicSize * Screen.width / Screen.height;
 
+        /*Debug.Log(m_fGameWidth*2f);
+        Debug.Log(m_fGameWidth);*/
 
-        Debug.Log(m_fGameWidth*2f);
-        Debug.Log(m_fGameWidth);
+        m_fDeltaIncrementation = 0.01f;
+        InvokeRepeating("IncreaseFrequence", m_fTime, m_fTime);
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
         //Debug.Log(m_goTabCurrentLeaves.Length);
 
-        m_fRandomFloat = Random.Range (-m_fGameWidth, m_fGameWidth);
-        m_v2Position = new Vector2 (m_fRandomFloat, this.transform.position.y);
+        m_fRandomFloat = Random.Range(-m_fGameWidth, m_fGameWidth);
+        m_v2Position = new Vector2(m_fRandomFloat, this.transform.position.y);
 
-        if(Time.time > m_fNextActionTime)
+        if (Time.time > m_fNextActionTime)
         {
             m_fNextActionTime += m_fFrequence;
             GameObject _goLeaf;
@@ -67,13 +75,21 @@ public class RandomInstantiate : MonoBehaviour
         }
         /*while (m_iCurrentLeavesCpt <= m_iMaxLeavesCpt)
         {*/
-                /*if (m_iCurrentLeavesCpt < /*m_iMaxLeavesCpt*/ /*m_goTabCurrentLeaves.Length)*/
+        /*if (m_iCurrentLeavesCpt < /*m_iMaxLeavesCpt*/ /*m_goTabCurrentLeaves.Length)*/
 
 
-            //}
+        //}
     }
 
-
-
-
+    void IncreaseFrequence()
+    {
+        if (m_fFrequence > 0f)
+        {
+            m_fFrequence -= m_fDeltaIncrementation;
+        }
+        else
+        {
+            m_fFrequence = 0f;
+        }
+    }
 }
