@@ -21,7 +21,6 @@ public class RandomInstantiate : MonoBehaviour
     //[SerializeField]
     private Vector2 m_v2Position;
 
-    [SerializeField]
     [Range(0.0f, 12.85901f)]
     private float m_fGameWidth;
 
