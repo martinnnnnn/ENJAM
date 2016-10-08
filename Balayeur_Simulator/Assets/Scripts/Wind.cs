@@ -6,6 +6,11 @@ using System;
 public class Wind : MonoBehaviour {
 
 
+    public double offset = 0.1;
+    public double freqOfChange;
+
+
+
     // To use:
     // 1. Create an empty game object
     // Add a Collider2D to the empty object. I used a standard Box Collider 2D, as a trigger, to create an isolated square that applies "wind"
@@ -47,13 +52,15 @@ public class Wind : MonoBehaviour {
     // This function is called every fixed framerate frame
     void FixedUpdate()
     {
-        m_fRandomForceX = NextGaussianDouble();//Random.Range(m_fMinForceBound, m_fMaxForceBound);
-        m_fRandomForceY = NextGaussianDouble();//Random.Range(m_fMinForceBound, m_fMaxForceBound);
+        m_fRandomForceX = NextValue(m_fRandomForceX);//Random.Range(m_fMinForceBound, m_fMaxForceBound);
+        m_fRandomForceY = NextValue(m_fRandomForceY);//Random.Range(m_fMinForceBound, m_fMaxForceBound);
 
         /*Debug.Log("X : " + m_fRandomForceX);
         Debug.Log("X : " + m_fRandomForceY);*/
 
         m_v2RandomForce = new Vector2((float)m_fRandomForceX, (float)m_fRandomForceY);
+
+
 
         // For every object being tracked
         for (int i = 0; i < objects.Count; i++)
@@ -79,19 +86,30 @@ public class Wind : MonoBehaviour {
         objects.Remove(other);
     }
 
-    public double NextGaussianDouble(/*this Random r*/)
+    public double NextValue(double previous)
     {
-        double U, u, v, S;
+        double newValue;
+        double tempOffset;
+        tempOffset = (previous < 0) ? -offset : offset;
 
-        do
-        {
-            u = 2.0 * UnityEngine.Random.Range(m_fMinForceBound, m_fMaxForceBound) - 1.0;
-            v = 2.0 * UnityEngine.Random.Range(m_fMinForceBound, m_fMaxForceBound) - 1.0;
-            S = u * u + v * v;
-        }
-        while (S >= 1.0);
+        newValue = UnityEngine.Random.Range((float)(previous - tempOffset), (float)(previous - tempOffset));
 
-        double fac = Math.Sqrt(-2.0 * Math.Log(S) / S);
-        return u * fac;
+        return newValue;
     }
+
+    //public double NextGaussianDouble(double previous)
+    //{
+    //    double U, u, v, S;
+
+    //    do
+    //    {
+    //        u = 2.0 * UnityEngine.Random.Range(m_fMinForceBound, m_fMaxForceBound) - 1.0;
+    //        v = 2.0 * UnityEngine.Random.Range(m_fMinForceBound, m_fMaxForceBound) - 1.0;
+    //        S = u * u + v * v;
+    //    }
+    //    while (S >= 1.0);
+
+    //    double fac = Math.Sqrt(-2.0 * Math.Log(S) / S);
+    //    return u * fac;
+    //}
 }

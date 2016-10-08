@@ -5,10 +5,15 @@ using UnityEngine.UI;
 
 public class SpriteAnim : MonoBehaviour
 {
+
+    public int totalNumberOfFlowersLevel1 = 20;
+    public int totalNumberOfFlowersLevel2 = 50;
+
     public GameObject AnimatedGameObject;
     public AnimSpriteSet[] AnimationSets;
     private int Cur_SpriteID;
-    private float SecsPerFrame = 0.25f;
+    [HideInInspector]
+    public float SecsPerFrame = 0.25f;
 
     void Awake()
     {
@@ -17,12 +22,22 @@ public class SpriteAnim : MonoBehaviour
         {
             AnimatedGameObject = this.gameObject;
         }
-        PlayAnimation(2, 0.05f);
+
+        PlayAnimation(2,0.05f);
     }
 
+    public void stopCoroutine()
+    {
+        StopCoroutine("AnimateSprite");
+    }
 
     public void PlayAnimation(int ID, float secPerFrame)
     {
+        if (secPerFrame != SecsPerFrame)
+        {
+            StopCoroutine("AnimateSprite");
+        }
+
         SecsPerFrame = secPerFrame;
         StopCoroutine("AnimateSprite");
         //Add as much ID as necessary. Each is a different animation.
@@ -33,6 +48,8 @@ public class SpriteAnim : MonoBehaviour
                 StartCoroutine("AnimateSprite", ID);
                 break;
         }
+
+
     }
 
     IEnumerator AnimateSprite(int ID)
@@ -41,6 +58,7 @@ public class SpriteAnim : MonoBehaviour
         switch (ID)
         {
             case 0:
+                //Debug.Log(SecsPerFrame);
                 yield return new WaitForSeconds(SecsPerFrame);
                 AnimatedGameObject.GetComponent<SpriteRenderer>().sprite
                 = AnimationSets[ID].Anim_Sprites[Cur_SpriteID];
@@ -51,9 +69,11 @@ public class SpriteAnim : MonoBehaviour
                 }
                 nextID = returnNextId();
                 if (nextID != ID) Cur_SpriteID = 0;
-                StartCoroutine("AnimateSprite", returnNextId());
+                ID = nextID;
+                StartCoroutine("AnimateSprite", ID);
                 break;
             case 1:
+               // Debug.Log(SecsPerFrame);
                 yield return new WaitForSeconds(SecsPerFrame);
                 AnimatedGameObject.GetComponent<SpriteRenderer>().sprite
                 = AnimationSets[ID].Anim_Sprites[Cur_SpriteID];
@@ -64,10 +84,12 @@ public class SpriteAnim : MonoBehaviour
                 }
                 nextID = returnNextId();
                 if (nextID != ID) Cur_SpriteID = 0;
-                StartCoroutine("AnimateSprite", nextID);
+                ID = nextID;
+                StartCoroutine("AnimateSprite", ID);
                 break;
-            case 2:                yield return new WaitForSeconds(SecsPerFrame);
-                Debug.Log("start bug ID : " + ID + " / Cur_SpriteID : " + Cur_SpriteID);
+            case 2:
+                //Debug.Log(SecsPerFrame);
+                yield return new WaitForSeconds(SecsPerFrame);
                 AnimatedGameObject.GetComponent<SpriteRenderer>().sprite
                 = AnimationSets[ID].Anim_Sprites[Cur_SpriteID];
                 Cur_SpriteID++;
@@ -75,10 +97,10 @@ public class SpriteAnim : MonoBehaviour
                 {
                     Cur_SpriteID = 0;
                 }
-                Debug.Log("endbug");
                 nextID = returnNextId();
                 if (nextID != ID) Cur_SpriteID = 0;
-                StartCoroutine("AnimateSprite", returnNextId());
+                ID = nextID;
+                StartCoroutine("AnimateSprite", ID);
                 break;
         }
 
@@ -86,13 +108,57 @@ public class SpriteAnim : MonoBehaviour
 
     int returnNextId()
     {
+
+        int numberOfFlowers = 0;
+        
+        foreach (Stack stack in FindObjectsOfType<Stack>())
+        {
+            numberOfFlowers += stack.currentFlowerCounter;
+        }
+
         if (Input.GetAxis("Horizontal") < 0)
         {
-            return 1;
+            if (numberOfFlowers < totalNumberOfFlowersLevel1)
+            {
+                
+                return 1;
+            }
+            else if (numberOfFlowers < totalNumberOfFlowersLevel2)
+            {
+                // return animation lvl 2
+            }
+            else
+            {
+                // return animation lvl 
+            }
+
         }
         else if (Input.GetAxis("Horizontal") > 0)
         {
-            return 0;
+            if (numberOfFlowers < totalNumberOfFlowersLevel1)
+            {
+                return 0;
+            }
+            else if (numberOfFlowers < totalNumberOfFlowersLevel2)
+            {
+                // return animation lvl 2
+            }
+            else
+            {
+                // return animation lvl 
+            }
+        }
+        if (numberOfFlowers < totalNumberOfFlowersLevel1)
+        {
+            return 2;
+        }
+        else if (numberOfFlowers < totalNumberOfFlowersLevel2)
+        {
+            // return animation lvl 2
+        }
+        else
+        {
+            // return animation lvl 
         }
         return 2;
     }

@@ -23,6 +23,7 @@ public class WindowsObjectsGenerator : MonoBehaviour {
     public float slowingValue;
     
     public float speedingValue;
+    public float fallingSpeed = 2;
 
     public string img_inversement;
     public string img_slow;
@@ -94,5 +95,6 @@ public class WindowsObjectsGenerator : MonoBehaviour {
         }
         gObject.AddComponent<PolygonCollider2D>();
         gObject.AddComponent<Rigidbody2D>();
+        gObject.GetComponent<Rigidbody2D>().drag = fallingSpeed;
     }
 }
