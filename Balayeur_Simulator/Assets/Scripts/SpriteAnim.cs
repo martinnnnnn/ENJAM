@@ -9,8 +9,6 @@ public class SpriteAnim : MonoBehaviour
     public int totalNumberOfFlowersLevel1 = 20;
     public int totalNumberOfFlowersLevel2 = 50;
 
-    private int ID;
-    private int nextID;
     public GameObject AnimatedGameObject;
     public AnimSpriteSet[] AnimationSets;
     private int Cur_SpriteID;
@@ -24,8 +22,8 @@ public class SpriteAnim : MonoBehaviour
         {
             AnimatedGameObject = this.gameObject;
         }
-        ID = 2;
-        PlayAnimation(0.05f);
+
+        PlayAnimation(2,0.05f);
     }
 
     public void stopCoroutine()
@@ -33,7 +31,7 @@ public class SpriteAnim : MonoBehaviour
         StopCoroutine("AnimateSprite");
     }
 
-    public void PlayAnimation(float secPerFrame)
+    public void PlayAnimation(int ID, float secPerFrame)
     {
         if (secPerFrame != SecsPerFrame)
         {
@@ -56,7 +54,7 @@ public class SpriteAnim : MonoBehaviour
 
     IEnumerator AnimateSprite(int ID)
     {
-        //Debug.Log(SecsPerFrame);
+        int nextID;
         switch (ID)
         {
             case 0:
@@ -69,7 +67,7 @@ public class SpriteAnim : MonoBehaviour
                 {
                     Cur_SpriteID = 0;
                 }
-                returnNextId();
+                nextID = returnNextId();
                 if (nextID != ID) Cur_SpriteID = 0;
                 ID = nextID;
                 StartCoroutine("AnimateSprite", ID);
@@ -84,7 +82,7 @@ public class SpriteAnim : MonoBehaviour
                 {
                     Cur_SpriteID = 0;
                 }
-                returnNextId();
+                nextID = returnNextId();
                 if (nextID != ID) Cur_SpriteID = 0;
                 ID = nextID;
                 StartCoroutine("AnimateSprite", ID);
@@ -99,7 +97,7 @@ public class SpriteAnim : MonoBehaviour
                 {
                     Cur_SpriteID = 0;
                 }
-                returnNextId();
+                nextID = returnNextId();
                 if (nextID != ID) Cur_SpriteID = 0;
                 ID = nextID;
                 StartCoroutine("AnimateSprite", ID);
@@ -108,7 +106,7 @@ public class SpriteAnim : MonoBehaviour
 
     }
 
-    void returnNextId()
+    int returnNextId()
     {
 
         int numberOfFlowers = 0;
@@ -122,8 +120,8 @@ public class SpriteAnim : MonoBehaviour
         {
             if (numberOfFlowers < totalNumberOfFlowersLevel1)
             {
-                nextID = 1;
-                return;
+                
+                return 1;
             }
             else if (numberOfFlowers < totalNumberOfFlowersLevel2)
             {
@@ -139,8 +137,7 @@ public class SpriteAnim : MonoBehaviour
         {
             if (numberOfFlowers < totalNumberOfFlowersLevel1)
             {
-                nextID = 0;
-                return;
+                return 0;
             }
             else if (numberOfFlowers < totalNumberOfFlowersLevel2)
             {
@@ -153,8 +150,7 @@ public class SpriteAnim : MonoBehaviour
         }
         if (numberOfFlowers < totalNumberOfFlowersLevel1)
         {
-            nextID = 2;
-            return;
+            return 2;
         }
         else if (numberOfFlowers < totalNumberOfFlowersLevel2)
         {
@@ -164,8 +160,7 @@ public class SpriteAnim : MonoBehaviour
         {
             // return animation lvl 
         }
-        nextID = 2;
-        return;
+        return 2;
     }
 }
 

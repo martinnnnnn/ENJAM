@@ -26,24 +26,32 @@ public class BerzerkMode : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        berzerkValue++;
+        if (berzerkValue < berzerkValueMax)
+        {
+            berzerkValue++;
+        }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            spriteanim.stopCoroutine();
-            //if (berzerkValue < berzerkValueMax)
-            //{
-            //    berzerkValue -= 3;
-            //    Stack.isCleaningBerzerk = true;
-            //    //spriteanim.SecsPerFrame = animSpeedBerzerk;
-            //    spriteanim.PlayAnimation(animSpeedBerzerk);
-            //}
+            //spriteanim.stopCoroutine();
+            if (berzerkValue > 3)
+            {
+                berzerkValue -= 3;
+                Stack.isCleaningBerzerk = true;
+                //spriteanim.SecsPerFrame = animSpeedBerzerk;
+                //spriteanim.PlayAnimation(animSpeedBerzerk);
+            }
+            else
+            {
+                Stack.isCleaningBerzerk = false;
+            }
         }
-        //else if (Input.GetKeyUp(KeyCode.Space))
-        //{
-        //    Stack.isCleaningBerzerk = false;
-        //    //spriteanim.SecsPerFrame = animSpeedNormal;
-        //    spriteanim.PlayAnimation(animSpeedNormal);
-        //}
+        else if (Input.GetKeyUp(KeyCode.Space))
+        {
+            Stack.isCleaningBerzerk = false;
+            //spriteanim.SecsPerFrame = animSpeedNormal;
+            //spriteanim.PlayAnimation(animSpeedNormal);
+        }
 
     }
 }

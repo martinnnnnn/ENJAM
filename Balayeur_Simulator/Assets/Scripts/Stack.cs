@@ -75,12 +75,12 @@ public class Stack : MonoBehaviour
         {
             if (isCleaning && isCleaningBerzerk)
             {
+                Debug.Log("boosterCleaning");
                 nextActionTime = Time.time + periodBerzerk;
                 currentFlowerCounter--;
             }
             else if (isCleaning)
             {
-                Debug.Log("time : " + Time.time + " / value : " + currentFlowerCounter);
                 nextActionTime = Time.time + periodNormal;
                 currentFlowerCounter--;
             }
