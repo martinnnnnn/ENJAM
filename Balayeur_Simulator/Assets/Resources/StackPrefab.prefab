@@ -28,7 +28,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4000013429669148
 Transform:
   m_ObjectHideFlags: 1
@@ -72,8 +72,9 @@ MonoBehaviour:
   img_tas1: img_tas-1
   img_tas2: img_tas-2
   img_tas3: img_tas-3
-  periodNormal: 1
-  periodBerzerk: 0.5
+  periodNormal: 11.01
+  periodBerzerk: 1
+  currentFlowerCounter: 0
 --- !u!212 &212000011653907944
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -39,7 +39,7 @@ public class Ground : MonoBehaviour
 
             if (closeLeaves.Count > numberOfLeavesForStack)
             {
-                Stack.CreateStack(leaf.gameObject.transform.position);
+                Stack.CreateStack(leaf.gameObject.transform.position, closeLeaves.Count);
 
                 foreach (Flower deadleaf in closeLeaves)
                 {

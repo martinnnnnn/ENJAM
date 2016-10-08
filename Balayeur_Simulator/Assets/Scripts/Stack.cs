@@ -16,7 +16,8 @@ public class Stack : MonoBehaviour
     public float periodBerzerk = 0.5f;
 
 
-    private int currentFlowerCounter = 0;
+    [HideInInspector]
+    public int currentFlowerCounter;
 
     private Sprite sprite1;
     private Sprite sprite2;
@@ -27,10 +28,11 @@ public class Stack : MonoBehaviour
     private float nextActionTime = 0.0f;
 
 
-    public static void CreateStack(Vector2 position)
+    public static void CreateStack(Vector2 position, int initialFlowerCounter)
     {
         GameObject gObject = Instantiate(Resources.Load("StackPrefab")) as GameObject;
         gObject.transform.position = position;
+        gObject.GetComponent<Stack>().currentFlowerCounter = initialFlowerCounter;
     }
 
     void Start()
@@ -81,6 +83,12 @@ public class Stack : MonoBehaviour
                 nextActionTime += periodNormal;
                 currentFlowerCounter--;
             }
+        }
+
+        if (currentFlowerCounter <= 0)
+        {
+            Debug.Log("hello");
+            Destroy(gameObject);
         }
     }
 

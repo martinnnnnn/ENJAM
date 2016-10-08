@@ -24,4 +24,12 @@ public class Sweeper : MonoBehaviour {
         transform.Translate(m_fTranslation, 0f, 0f);
     }
 
+    void OnCollisionEnter2D(Collision2D c)
+    {
+        if (c.gameObject.CompareTag("flower"))
+        {
+            Physics2D.IgnoreCollision(c.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        }
+    }
+
 }
