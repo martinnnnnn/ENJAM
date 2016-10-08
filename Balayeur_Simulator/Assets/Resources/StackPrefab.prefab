@@ -72,7 +72,7 @@ MonoBehaviour:
   img_tas1: img_tas-1
   img_tas2: img_tas-2
   img_tas3: img_tas-3
-  periodNormal: 3
+  periodNormal: 0.5
   periodBerzerk: 1
   currentFlowerCounter: 0
 --- !u!212 &212000011653907944

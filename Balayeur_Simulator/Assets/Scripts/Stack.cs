@@ -24,7 +24,8 @@ public class Stack : MonoBehaviour
     private Sprite sprite3;
 
     private bool isCleaning = false;
-    private bool isCleaningBerzerk = false;
+    [HideInInspector]
+    static public bool isCleaningBerzerk = false;
     private float nextActionTime = 0.0f;
 
 
@@ -72,17 +73,15 @@ public class Stack : MonoBehaviour
     {
         if (Time.time > nextActionTime)
         {
-            //Debug.Log("time : " + Time.time + " / next : " + nextActionTime + " / bool : " + isCleaning);
-
             if (isCleaning && isCleaningBerzerk)
             {
-                nextActionTime += periodBerzerk;
+                nextActionTime = Time.time + periodBerzerk;
                 currentFlowerCounter--;
             }
             else if (isCleaning)
             {
-                nextActionTime += periodNormal;
-                Debug.Log("qsmldkfjqsdmlkfj");
+                Debug.Log("time : " + Time.time + " / value : " + currentFlowerCounter);
+                nextActionTime = Time.time + periodNormal;
                 currentFlowerCounter--;
             }
         }

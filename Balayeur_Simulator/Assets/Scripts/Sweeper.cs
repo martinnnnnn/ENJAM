@@ -10,9 +10,7 @@ using System.Collections.Generic;
 
 public class Sweeper : MonoBehaviour
 {
-
-
-
+    
     private List<WindowObjectStruct> eventList = new List<WindowObjectStruct>();
 
     //[SerializeField]

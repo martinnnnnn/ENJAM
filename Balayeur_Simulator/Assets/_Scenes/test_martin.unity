@@ -118,6 +118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a973c8f6c6e27147ad4314ab1c6da62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: 0.1
+  freqOfChange: 0
   m_fMinForceBound: 0
   m_fMaxForceBound: 0
 --- !u!61 &104735262
@@ -175,6 +177,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a973c8f6c6e27147ad4314ab1c6da62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: 0.1
+  freqOfChange: 0
   m_fMinForceBound: 0
   m_fMaxForceBound: 0
 --- !u!61 &231363835
@@ -393,6 +397,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fc22af7c3465e341ba87d244e4eaf13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  totalNumberOfFlowersLevel1: 20
+  totalNumberOfFlowersLevel2: 50
   AnimatedGameObject: {fileID: 0}
   AnimationSets:
   - AnimationName: animPiedsDroite
@@ -418,6 +424,7 @@ MonoBehaviour:
   - AnimationName: animPiedsGauche
     Anim_Sprites:
     - {fileID: 21300000, guid: 76c24543fbcac4a4986902ef188e37aa, type: 3}
+  SecsPerFrame: 0.25
 --- !u!1 &632360137
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,6 +453,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a973c8f6c6e27147ad4314ab1c6da62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: 0.1
+  freqOfChange: 0
   m_fMinForceBound: 0
   m_fMaxForceBound: 0
 --- !u!61 &632360139
@@ -503,6 +512,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a973c8f6c6e27147ad4314ab1c6da62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: 0.1
+  freqOfChange: 0
   m_fMinForceBound: 0
   m_fMaxForceBound: 0
 --- !u!61 &688558758
@@ -560,6 +571,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a973c8f6c6e27147ad4314ab1c6da62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: 0.1
+  freqOfChange: 0
   m_fMinForceBound: 0
   m_fMaxForceBound: 0
 --- !u!61 &734310744
@@ -766,6 +779,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a973c8f6c6e27147ad4314ab1c6da62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: 0.1
+  freqOfChange: 0
   m_fMinForceBound: 0
   m_fMaxForceBound: 0
 --- !u!61 &1119430870
@@ -852,6 +867,63 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 065d554a8fb3afb4e9d08f0f50ef3583, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &1536017888
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4000013144043642, guid: e9dbbac6710480942aa4e6924a25c17a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013144043642, guid: e9dbbac6710480942aa4e6924a25c17a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013144043642, guid: e9dbbac6710480942aa4e6924a25c17a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013144043642, guid: e9dbbac6710480942aa4e6924a25c17a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013144043642, guid: e9dbbac6710480942aa4e6924a25c17a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013144043642, guid: e9dbbac6710480942aa4e6924a25c17a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013144043642, guid: e9dbbac6710480942aa4e6924a25c17a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013144043642, guid: e9dbbac6710480942aa4e6924a25c17a, type: 2}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010486716550, guid: e9dbbac6710480942aa4e6924a25c17a,
+        type: 2}
+      propertyPath: spriteanim
+      value: 
+      objectReference: {fileID: 611828155}
+    - target: {fileID: 114000010486716550, guid: e9dbbac6710480942aa4e6924a25c17a,
+        type: 2}
+      propertyPath: animSpeedNormal
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010486716550, guid: e9dbbac6710480942aa4e6924a25c17a,
+        type: 2}
+      propertyPath: animSpeedBerzerk
+      value: 0.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: e9dbbac6710480942aa4e6924a25c17a, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1590913883
 GameObject:
   m_ObjectHideFlags: 0
@@ -880,6 +952,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a973c8f6c6e27147ad4314ab1c6da62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: 0.1
+  freqOfChange: 0
   m_fMinForceBound: 0
   m_fMaxForceBound: 0
 --- !u!61 &1590913885
@@ -937,6 +1011,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a973c8f6c6e27147ad4314ab1c6da62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: 0.1
+  freqOfChange: 0
   m_fMinForceBound: 0
   m_fMaxForceBound: 0
 --- !u!61 &1650976962
@@ -1036,6 +1112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a973c8f6c6e27147ad4314ab1c6da62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: 0.1
+  freqOfChange: 0
   m_fMinForceBound: 0
   m_fMaxForceBound: 0
 --- !u!61 &1773123804
@@ -1154,6 +1232,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a973c8f6c6e27147ad4314ab1c6da62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: 0.1
+  freqOfChange: 0
   m_fMinForceBound: 0
   m_fMaxForceBound: 0
 --- !u!61 &1983413512
