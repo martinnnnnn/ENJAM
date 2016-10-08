@@ -62,6 +62,7 @@ public class Stack : MonoBehaviour
     {
         if (c.gameObject.GetComponent<Sweeper>() != null)
         {
+            Debug.Log("mescouilles");
             isCleaning = false;
         }
     }
@@ -71,7 +72,7 @@ public class Stack : MonoBehaviour
     {
         if (Time.time > nextActionTime)
         {
-
+            //Debug.Log("time : " + Time.time + " / next : " + nextActionTime + " / bool : " + isCleaning);
 
             if (isCleaning && isCleaningBerzerk)
             {
@@ -81,13 +82,13 @@ public class Stack : MonoBehaviour
             else if (isCleaning)
             {
                 nextActionTime += periodNormal;
+                Debug.Log("qsmldkfjqsdmlkfj");
                 currentFlowerCounter--;
             }
         }
 
         if (currentFlowerCounter <= 0)
         {
-            Debug.Log("hello");
             Destroy(gameObject);
         }
     }

@@ -12,24 +12,26 @@ public enum EventObject
 };
 
 
-
+public struct WindowObjectStruct
+{
+    public Sprite sprite;
+    public EventObject type;
+    public float eventLenght;
+    public float slowingValue;
+    public float speedingValue;
+}
 
 public class WindowsObject : MonoBehaviour
 {
 
+    [HideInInspector]
     public Sprite sprite;
-    
-
     [HideInInspector]
     public EventObject type;
     [HideInInspector]
     public float eventLenght;
-    //[HideInInspector]
-    //public float eventTime;
     [HideInInspector]
     public float slowingValue;
     [HideInInspector]
     public float speedingValue;
-
-
 }
