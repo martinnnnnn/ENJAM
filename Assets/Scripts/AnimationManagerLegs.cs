@@ -8,14 +8,22 @@ public class AnimationManagerLegs : MonoBehaviour
     public int totalNumberOfFlowersLevel2 = 60;
     public int totalNumberOfFlowersEnd = 60;
 
+
+    public static int currentNumberOfFlower;
+
     private int stage = 0;
 
     // Use this for initialization
     void Start()
     {
+        currentNumberOfFlower = 0;
         foreach (Stack stack in FindObjectsOfType<Stack>())
         {
-            stack.changementCountFlowerCallBack += triggerFlowerCount;
+            if (!stack.isAlreadyTrigger)
+            {
+                stack.changementCountFlowerCallBack += triggerFlowerCount;
+                stack.isAlreadyTrigger = true;
+            }
         }
     }
 
@@ -70,14 +78,15 @@ public class AnimationManagerLegs : MonoBehaviour
     }
 
 
-
-
-
     void Update()
     {
         foreach (Stack stack in FindObjectsOfType<Stack>())
         {
-            stack.changementCountFlowerCallBack += triggerFlowerCount;
+            if (!stack.isAlreadyTrigger)
+            {
+                stack.changementCountFlowerCallBack += triggerFlowerCount;
+                stack.isAlreadyTrigger = true;
+            }
         }
 
 

@@ -293,6 +293,11 @@ Prefab:
       propertyPath: totalNumberOfFlowersLevel2
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 114000011700659524, guid: 0c03fc0d0f3b97c4caa084913f00f884,
+        type: 2}
+      propertyPath: totalNumberOfFlowersEnd
+      value: 100000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0c03fc0d0f3b97c4caa084913f00f884, type: 2}
   m_IsPrefabParent: 0

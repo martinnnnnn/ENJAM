@@ -38,6 +38,18 @@ public class BerzerkMode : MonoBehaviour
         if (berzerkValue < berzerkValueMax)
         {
             berzerkValue += m_fDeltaIncrementation;
+            if (!canBerzerk)
+            {
+                if (berzerkValue < minValueForBerzerk)
+                {
+                    m_iProgressBarImage.fillAmount = berzerkValue / berzerkValueMax;
+                    return;
+                }
+                else
+                {
+                    canBerzerk = true;
+                }
+            }
         }
 
        
@@ -50,12 +62,14 @@ public class BerzerkMode : MonoBehaviour
             }
             else
             {
+                canBerzerk = false;
                 Stack.isCleaningBerzerk = false;
             }
             
         }
         else
         {
+            canBerzerk = false;
             Stack.isCleaningBerzerk = false;
         }
 
