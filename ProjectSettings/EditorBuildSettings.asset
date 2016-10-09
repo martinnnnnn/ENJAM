@@ -5,17 +5,17 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/StartMenu.unity
   - enabled: 1
     path: Assets/_Scenes/test_sou.unity
   - enabled: 1
-    path: Assets/_Scenes/test_martin2.unity
+    path: Assets/_Scenes/_Game.unity
   - enabled: 1
     path: Assets/_Scenes/test_marion.unity
   - enabled: 1
     path: Assets/_Scenes/test_martin.unity
-  - enabled: 1
-    path: Assets/_Scenes/test_martin3.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/EndMenu.unity
+  - enabled: 0
+    path: Assets/_Scenes/test_martin3.unity
