@@ -6,12 +6,19 @@ public class AnimationManagerLegs : MonoBehaviour
 
     public int totalNumberOfFlowersLevel1 = 30;
     public int totalNumberOfFlowersLevel2 = 60;
-    public int totalNumberOfFlowersEnd = 60;
+    public int totalNumberOfFlowersEnd = 10;
+
 
 
     public static int currentNumberOfFlower;
 
     private int stage = 0;
+
+    private bool alreadyDieded = false;
+
+    private float suffocationDelay = 10f;
+    private float suffociationNextTime = 0f;
+
 
     // Use this for initialization
     void Start()
@@ -41,7 +48,13 @@ public class AnimationManagerLegs : MonoBehaviour
 
         if (numberOfFlowers > totalNumberOfFlowersEnd)
         {
-            Application.LoadLevel("_EndMenu");
+            if (!alreadyDieded)
+            {
+                alreadyDieded = false;
+                StartCoroutine(LaunchDeath());
+                SoundManager.PlaySoundOnce("game_over");
+            }
+            
         }
 
 
@@ -50,6 +63,7 @@ public class AnimationManagerLegs : MonoBehaviour
             if (stage > 0)
             {
                 GetComponent<Animator>().SetTrigger("previousStage");
+                SoundManager.PlaySoundOnce("voix_reniflement_01");
                 stage = 0;
             }
         }
@@ -58,19 +72,27 @@ public class AnimationManagerLegs : MonoBehaviour
             if (stage == 2)
             {
                 GetComponent<Animator>().SetTrigger("previousStage");
+                SoundManager.PlaySoundOnce("voix_eternuement_01");
                 stage = 1;
             }
             else if (stage == 0)
             {
+                SoundManager.PlaySoundOnce("voix_eternuement_01");
                 GetComponent<Animator>().SetTrigger("nextStage");
                 stage = 1;
             }
+            
         }
         else
         {
             if (stage < 2)
             {
-                GetComponent<Animator>().SetBool("nextStage", true);
+                GetComponent<Animator>().SetTrigger("nextStage");
+                if (Time.time > suffociationNextTime)
+                {
+                    SoundManager.PlaySoundOnce("voix_suffocation");
+                    suffociationNextTime = Time.time + suffocationDelay;
+                }
                 stage = 2;
             }
         }
@@ -110,5 +132,14 @@ public class AnimationManagerLegs : MonoBehaviour
 
 
     }
+
+  
+    IEnumerator LaunchDeath()
+    {
+        yield return new WaitForSeconds(9);
+        Application.LoadLevel("_EndMenu");
+        yield return 0;
+    }
+
 }
 

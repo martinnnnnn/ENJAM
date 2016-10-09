@@ -16,8 +16,8 @@ public class IncrementBounds : MonoBehaviour {
     // Use this for initialization
     void Awake ()
     {
-        m_fLinearDragMinBound = 5f;
-        m_fLinearDragMaxBound = 15f;
+        // m_fLinearDragMinBound = 5f;
+        // m_fLinearDragMaxBound = 15f;
         InvokeRepeating("IncreaseBounds", m_fTime, m_fTime);
 	}
 	

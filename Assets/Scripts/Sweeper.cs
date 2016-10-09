@@ -77,21 +77,25 @@ public class Sweeper : MonoBehaviour
             switch(objOrigin.type)
             {
                 case EventObject.INSERVEMENT:
+                    SoundManager.PlaySoundOnce("malus");
                     _goFeedBack = Instantiate(m_goFeedback, transform.position, transform.rotation)as GameObject;
                     _goFeedBack.GetComponent<SpriteRenderer>().sprite = m_sTabFeedBacksSprites[0];
                     Destroy(_goFeedBack, objOrigin.eventLenght);               
                     break;
                 case EventObject.DEPLACEMENT_SPEED:
+                    SoundManager.PlaySoundOnce("bonus");
                     _goFeedBack = Instantiate(m_goFeedback, transform.position, transform.rotation) as GameObject;
                     _goFeedBack.GetComponent<SpriteRenderer>().sprite = m_sTabFeedBacksSprites[1];
                     Destroy(_goFeedBack, objOrigin.eventLenght);
                     break;
                 case EventObject.DEPLACEMENT_SLOW:
+                    SoundManager.PlaySoundOnce("malus");
                     _goFeedBack = Instantiate(m_goFeedback, transform.position, transform.rotation) as GameObject;
                     _goFeedBack.GetComponent<SpriteRenderer>().sprite = m_sTabFeedBacksSprites[2];
                     Destroy(_goFeedBack, objOrigin.eventLenght);
                     break;
                 case EventObject.SWEEP_BOOST:
+                    SoundManager.PlaySoundOnce("bonus");
                     _goFeedBack = Instantiate(m_goFeedback, transform.position, transform.rotation) as GameObject;
                     _goFeedBack.GetComponent<SpriteRenderer>().sprite = m_sTabFeedBacksSprites[3];
                     Destroy(_goFeedBack, objOrigin.eventLenght);
