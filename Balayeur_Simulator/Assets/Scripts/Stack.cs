@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class Stack : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class Stack : MonoBehaviour
     static public bool isCleaningBerzerk = false;
     private float nextActionTime = 0.0f;
 
+    public Action changementCountFlowerCallBack;
 
     public static void CreateStack(Vector2 position, int initialFlowerCounter)
     {
@@ -42,15 +44,19 @@ public class Stack : MonoBehaviour
         sprite2 = Resources.Load(img_tas2, typeof(Sprite)) as Sprite;
         sprite3 = Resources.Load(img_tas3, typeof(Sprite)) as Sprite;
     }
-
-
+    
 
     void OnTriggerEnter2D(Collider2D c)
     {
         if (c.gameObject.GetComponent<Flower>() != null)
         {
             Destroy(c.gameObject);
+            if (changementCountFlowerCallBack != null)
+            {
+                changementCountFlowerCallBack();
+            }
             currentFlowerCounter++;
+            
             handleLevel();
         }
         if (c.gameObject.GetComponent<Sweeper>() != null)

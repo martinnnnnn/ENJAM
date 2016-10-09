@@ -22,6 +22,10 @@ public class Sweeper : MonoBehaviour
 
     private int direction = 1;
 
+
+   
+
+
     // Update is called once per frame
     void Update()
     {
@@ -35,8 +39,18 @@ public class Sweeper : MonoBehaviour
             }
 
         }
-
-        m_fTranslation = Input.GetAxis("Horizontal") * m_fSpeed * direction;
+        int axe = 0;
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            axe = -1;
+        }
+        else if (Input.GetKeyDown(KeyCode.D))
+        {
+            axe = 1;
+        }
+        //m_fTranslation = Input.GetAxis("Horizontal") * m_fSpeed * direction;
+        Debug.Log(Input.GetAxis("Horizontal"));
+        m_fTranslation = axe * m_fSpeed * direction;
         m_fTranslation *= Time.deltaTime;
         transform.Translate(m_fTranslation, 0f, 0f);
     }
