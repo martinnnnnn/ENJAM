@@ -6,10 +6,8 @@ using System.Collections.Generic;
 
 
 
-public class WindowsObjectsGenerator : MonoBehaviour {
-
-
-
+public class WindowsObjectsGenerator : MonoBehaviour
+{
     public GameObject objectPrefab;
 
     public List<GameObject> windowsPositions;
@@ -49,10 +47,8 @@ public class WindowsObjectsGenerator : MonoBehaviour {
     //[SerializeField]
     private Vector2 m_v2Position;
 
-    
-    private float timeTillNextSpawn = 0f;
 
-    
+    private float timeTillNextSpawn = 0f;
 
 
     // Use this for initialization
