@@ -69,6 +69,11 @@ public class BerzerkMode : MonoBehaviour
         }
         else
         {
+            if (Input.GetKey(KeyCode.Space))
+            {
+                SoundManager.PlaySoundOnce("voix_essouflement");
+            }
+
             canBerzerk = false;
             Stack.isCleaningBerzerk = false;
         }

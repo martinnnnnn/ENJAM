@@ -3,18 +3,25 @@ using System.Collections;
 
 public class AnimationManagerBroom : MonoBehaviour
 {
-    
+
+    private bool played = false;
     
     void Update()
     {
 
         if (Stack.isCleaningBerzerk)
         {
+            if (!played)
+            {
+                SoundManager.PlaySoundOnce("voix_turbo_01");
+                played = true;
+            }
             GetComponent<Animator>().SetBool("berzerk", true);
         }
         else
         {
             GetComponent<Animator>().SetBool("berzerk", false);
+            played = false;
         }
 
 
@@ -22,7 +29,6 @@ public class AnimationManagerBroom : MonoBehaviour
         //if (Input.GetAxis("Horizontal") < 0)
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            Debug.Log("left");
             GetComponent<Animator>().SetBool("left", true);
         }
         else if (Input.GetKeyDown(KeyCode.D))

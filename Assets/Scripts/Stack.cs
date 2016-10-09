@@ -103,6 +103,7 @@ public class Stack : MonoBehaviour
         
         if (currentFlowerCounter <= 0)
         {
+            SoundManager.PlaySoundOnce("balais_01");
             Destroy(gameObject);
         }
     }
