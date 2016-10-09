@@ -36,6 +36,7 @@ public class Score : MonoBehaviour
     private void CalculTemps()
     {
         m_tCompteur = Time.timeSinceLevelLoad;
+        PlayerPrefs.SetFloat("score", m_tCompteur);
         /*float _fMinutes = m_tCompteur / 60f;
         float _fSecondes = m_tCompteur % 60f;*/
 

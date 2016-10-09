@@ -41,7 +41,7 @@ public class AnimationManagerLegs : MonoBehaviour
 
         if (numberOfFlowers > totalNumberOfFlowersEnd)
         {
-            Application.LoadLevel("EndMenu");
+            Application.LoadLevel("_EndMenu");
         }
 
 
