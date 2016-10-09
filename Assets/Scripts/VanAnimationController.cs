@@ -8,6 +8,7 @@ public class VanAnimationController : MonoBehaviour
     public float maxValueForSpawnRange = 60f;
 
     private float nextAnimationTime = 0f;
+    public Animation animation;
 
     // Use this for initialization
     void Start ()
@@ -22,10 +23,8 @@ public class VanAnimationController : MonoBehaviour
 	    
         if (Time.time > nextAnimationTime)
         {
-            Debug.Log("hm?");
             nextAnimationTime = Time.time + Random.Range(minValueForSpawnRange, maxValueForSpawnRange);
-
-            GetComponent<Animator>().SetTrigger("StartAnim");
+            animation.Play();
         }
 	}
 }
