@@ -67,40 +67,10 @@ public class SpriteAnimLegs : MonoBehaviour
                 ID = nextID;
                 StartCoroutine("AnimateSprite", ID);
                 break;
-            //case 1:
-            //    // Debug.Log(SecsPerFrame);
-            //    yield return new WaitForSeconds(SecsPerFrame);
-            //    AnimatedGameObject.GetComponent<SpriteRenderer>().sprite
-            //    = AnimationSets[ID].Anim_Sprites[Cur_SpriteID];
-            //    Cur_SpriteID++;
-            //    if (Cur_SpriteID >= AnimationSets[ID].Anim_Sprites.Length)
-            //    {
-            //        Cur_SpriteID = 0;
-            //    }
-            //    nextID = returnNextId();
-            //    if (nextID != ID) Cur_SpriteID = 0;
-            //    ID = nextID;
-            //    StartCoroutine("AnimateSprite", ID);
-            //    break;
-            //case 2:
-            //    //Debug.Log(SecsPerFrame);
-            //    yield return new WaitForSeconds(SecsPerFrame);
-            //    AnimatedGameObject.GetComponent<SpriteRenderer>().sprite
-            //    = AnimationSets[ID].Anim_Sprites[Cur_SpriteID];
-            //    Cur_SpriteID++;
-            //    if (Cur_SpriteID >= AnimationSets[ID].Anim_Sprites.Length)
-            //    {
-            //        Cur_SpriteID = 0;
-            //    }
-            //    nextID = returnNextId();
-            //    if (nextID != ID) Cur_SpriteID = 0;
-            //    ID = nextID;
-            //    StartCoroutine("AnimateSprite", ID);
-            //    break;
         }
 
     }
-
+    
     int returnNextId()
     {
 
@@ -120,14 +90,14 @@ public class SpriteAnimLegs : MonoBehaviour
             }
             else if (numberOfFlowers < totalNumberOfFlowersLevel2)
             {
-                // return animation lvl 2
+                return 3;
             }
             else
             {
-                // return animation lvl 
+                return 6;
             }
-
         }
+
         else if (Input.GetAxis("Horizontal") > 0)
         {
             if (numberOfFlowers < totalNumberOfFlowersLevel1)
@@ -136,11 +106,11 @@ public class SpriteAnimLegs : MonoBehaviour
             }
             else if (numberOfFlowers < totalNumberOfFlowersLevel2)
             {
-                // return animation lvl 2
+                return 4;
             }
             else
             {
-                // return animation lvl 
+                return 7;
             }
         }
         if (numberOfFlowers < totalNumberOfFlowersLevel1)
@@ -149,13 +119,12 @@ public class SpriteAnimLegs : MonoBehaviour
         }
         else if (numberOfFlowers < totalNumberOfFlowersLevel2)
         {
-            // return animation lvl 2
+            return 5;
         }
         else
         {
-            // return animation lvl 
+            return 8;
         }
-        return 2;
     }
 }
 

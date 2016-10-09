@@ -187,7 +187,7 @@ MonoBehaviour:
   totalNumberOfFlowersLevel2: 50
   AnimatedGameObject: {fileID: 0}
   AnimationSets:
-  - AnimationName: left
+  - AnimationName: left_normal
     Anim_Sprites:
     - {fileID: 21300000, guid: 76c24543fbcac4a4986902ef188e37aa, type: 3}
     - {fileID: 21300000, guid: c81dc5a7a97db8b41ab142999ebd939c, type: 3}
@@ -197,7 +197,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 2179087afeb174f49bd147d97cd5292d, type: 3}
     - {fileID: 21300000, guid: 4e9b9cb129e7fab45b59e1db4432d7c9, type: 3}
     - {fileID: 21300000, guid: 418d596e568e6ba4886af9c8489f21fc, type: 3}
-  - AnimationName: right
+  - AnimationName: right_normal
     Anim_Sprites:
     - {fileID: 21300000, guid: 4680eab2edc3c14448e066a0751d27cd, type: 3}
     - {fileID: 21300000, guid: 7b7d9df76a94ccd41a6e64f7c5067b93, type: 3}
@@ -207,9 +207,55 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 11c696956335b894b8786fe86b60f7f9, type: 3}
     - {fileID: 21300000, guid: aae2fe7e38f7bce4db23a4175dc443fe, type: 3}
     - {fileID: 21300000, guid: 19266e6eae5abcf408a085833019d411, type: 3}
-  - AnimationName: still
+  - AnimationName: still_normal
     Anim_Sprites:
     - {fileID: 21300000, guid: 76c24543fbcac4a4986902ef188e37aa, type: 3}
+  - AnimationName: left_koff
+    Anim_Sprites:
+    - {fileID: 21300000, guid: 4ac2849e55b2e704b913164585427f8c, type: 3}
+    - {fileID: 21300000, guid: dbe6ca809d2ad5a49804cce1ccc433a4, type: 3}
+    - {fileID: 21300000, guid: 0a7bed171b3a96845a114fd347eb1af3, type: 3}
+    - {fileID: 21300000, guid: 3f96135edbec35647ba2217123c6173f, type: 3}
+    - {fileID: 21300000, guid: 7bfd607f2d5b24f49b083415bd4a93cb, type: 3}
+    - {fileID: 21300000, guid: d134e9b46c419994aab7ee8f225ab26c, type: 3}
+    - {fileID: 21300000, guid: cd84d14ed57e349488287e806ffb35f7, type: 3}
+    - {fileID: 21300000, guid: cd84d14ed57e349488287e806ffb35f7, type: 3}
+  - AnimationName: right_koff
+    Anim_Sprites:
+    - {fileID: 21300000, guid: 4ac2849e55b2e704b913164585427f8c, type: 3}
+    - {fileID: 21300000, guid: dbe6ca809d2ad5a49804cce1ccc433a4, type: 3}
+    - {fileID: 21300000, guid: 0a7bed171b3a96845a114fd347eb1af3, type: 3}
+    - {fileID: 21300000, guid: 3f96135edbec35647ba2217123c6173f, type: 3}
+    - {fileID: 21300000, guid: 7bfd607f2d5b24f49b083415bd4a93cb, type: 3}
+    - {fileID: 21300000, guid: d134e9b46c419994aab7ee8f225ab26c, type: 3}
+    - {fileID: 21300000, guid: cd84d14ed57e349488287e806ffb35f7, type: 3}
+    - {fileID: 21300000, guid: cd84d14ed57e349488287e806ffb35f7, type: 3}
+  - AnimationName: still_koff
+    Anim_Sprites:
+    - {fileID: 21300000, guid: 4ac2849e55b2e704b913164585427f8c, type: 3}
+  - AnimationName: left_pls
+    Anim_Sprites:
+    - {fileID: 21300000, guid: 8855e98bdf4dd74439f9d50d814b3d36, type: 3}
+    - {fileID: 21300000, guid: 4883ff00cc2c3eb45958a041c54a5729, type: 3}
+    - {fileID: 21300000, guid: 50265216ab1b5334ebcc12c025ceb44b, type: 3}
+    - {fileID: 21300000, guid: 8f9763107ffd86a48bab19912391bf53, type: 3}
+    - {fileID: 21300000, guid: 216c9a687808a4147959246f1b7da4e7, type: 3}
+    - {fileID: 21300000, guid: 3c6eeb7148d8cca469ddabecf77ee303, type: 3}
+    - {fileID: 21300000, guid: e63209f4663001f4fb3a2ba8d9b1ca75, type: 3}
+    - {fileID: 21300000, guid: 73947e2c5e097dc4795b54c726789e73, type: 3}
+  - AnimationName: right_pls
+    Anim_Sprites:
+    - {fileID: 21300000, guid: 8855e98bdf4dd74439f9d50d814b3d36, type: 3}
+    - {fileID: 21300000, guid: 4883ff00cc2c3eb45958a041c54a5729, type: 3}
+    - {fileID: 21300000, guid: 50265216ab1b5334ebcc12c025ceb44b, type: 3}
+    - {fileID: 21300000, guid: 8f9763107ffd86a48bab19912391bf53, type: 3}
+    - {fileID: 21300000, guid: 216c9a687808a4147959246f1b7da4e7, type: 3}
+    - {fileID: 21300000, guid: 3c6eeb7148d8cca469ddabecf77ee303, type: 3}
+    - {fileID: 21300000, guid: e63209f4663001f4fb3a2ba8d9b1ca75, type: 3}
+    - {fileID: 21300000, guid: 73947e2c5e097dc4795b54c726789e73, type: 3}
+  - AnimationName: still_pls
+    Anim_Sprites:
+    - {fileID: 21300000, guid: 8855e98bdf4dd74439f9d50d814b3d36, type: 3}
   SecsPerFrame: 0.25
 --- !u!212 &212000012047670022
 SpriteRenderer:
@@ -239,7 +285,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 4158e34e47017a44cbd8fff72bf7b1fb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

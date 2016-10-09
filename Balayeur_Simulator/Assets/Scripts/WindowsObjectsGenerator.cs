@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using DG.Tweening;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -34,6 +35,17 @@ public class WindowsObjectsGenerator : MonoBehaviour {
     private Sprite sprite_speed;
     private Sprite sprite_sweep;
 
+    public string perso1;
+    public string perso2;
+    public string perso3;
+    public string perso4;
+    private Sprite sprite_perso1;
+    private Sprite sprite_perso2;
+    private Sprite sprite_perso3;
+    private Sprite sprite_perso4;
+
+
+
     //[SerializeField]
     private Vector2 m_v2Position;
 
@@ -50,6 +62,11 @@ public class WindowsObjectsGenerator : MonoBehaviour {
         sprite_slow = Resources.Load(img_slow, typeof(Sprite)) as Sprite;
         sprite_speed = Resources.Load(img_speed, typeof(Sprite)) as Sprite;
         sprite_sweep = Resources.Load(img_sweep, typeof(Sprite)) as Sprite;
+
+        sprite_perso1 = Resources.Load(perso1, typeof(Sprite)) as Sprite;
+        sprite_perso2 = Resources.Load(perso2, typeof(Sprite)) as Sprite;
+        sprite_perso3 = Resources.Load(perso3, typeof(Sprite)) as Sprite;
+        sprite_perso4 = Resources.Load(perso4, typeof(Sprite)) as Sprite;
     }
 
 
@@ -63,8 +80,53 @@ public class WindowsObjectsGenerator : MonoBehaviour {
             EventObject eventType = (EventObject)Random.Range(0, System.Enum.GetNames(typeof(EventObject)).Length - 1);
 
 
-            CreateWindowsObjects(windowsPositions[spawningPosition].transform.position, eventType);
+            StartCoroutine(windowObjectSpawing(windowsPositions[spawningPosition].transform.position, eventType));
+            
+
         }
+    }
+
+
+    IEnumerator windowObjectSpawing(Vector3 position, EventObject type)
+    {
+        
+        GameObject g = new GameObject();
+        g.AddComponent<SpriteRenderer>();
+        int persoNumber = Random.Range(0, 3);
+        switch (persoNumber)
+        {
+            case 0:
+                g.GetComponent<SpriteRenderer>().sprite = sprite_perso1;
+                break;
+            case 1:
+                g.GetComponent<SpriteRenderer>().sprite = sprite_perso2;
+                break;
+            case 2:
+                g.GetComponent<SpriteRenderer>().sprite = sprite_perso3;
+                break;
+            case 3:
+                g.GetComponent<SpriteRenderer>().sprite = sprite_perso4;
+                break;
+        }
+        
+        g.GetComponent<SpriteRenderer>().sprite = sprite_perso1;
+
+
+        g.transform.position = new Vector3(
+            position.x,
+            position.y - 1.6f,
+            position.z);
+        g.GetComponent<SpriteRenderer>().sortingOrder = -5;
+        g.transform.DOMove(new Vector3(position.x,position.y-0.3f,position.z),1.5f).OnComplete(() =>
+        {
+            Destroy(g);
+            CreateWindowsObjects(position, type);
+        });
+
+        //yield return new WaitForSeconds(0.5f);
+        //CreateWindowsObjects(position, type);
+
+        yield return 0;
     }
 
 
