@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System;
 
 public class Stack : MonoBehaviour
 {
@@ -29,7 +28,7 @@ public class Stack : MonoBehaviour
     static public bool isCleaningBerzerk = false;
     private float nextActionTime = 0.0f;
 
-    public Action changementCountFlowerCallBack;
+    public System.Action changementCountFlowerCallBack;
 
     public static void CreateStack(Vector2 position, int initialFlowerCounter)
     {
@@ -52,6 +51,7 @@ public class Stack : MonoBehaviour
         {
             Destroy(c.gameObject);
             currentFlowerCounter++;
+            //Debug.Log("appel callback");
             if (changementCountFlowerCallBack != null)
             {
                 changementCountFlowerCallBack();
