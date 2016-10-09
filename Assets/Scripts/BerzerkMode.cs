@@ -16,8 +16,8 @@ public class BerzerkMode : MonoBehaviour
     public float minValueForBerzerk = 50;
     private bool canBerzerk = false;
 
-    static private float berzerkValue = 0f;
-    static public float berzerkValueMax = 100f;
+    public float berzerkValue = 0f;
+    public float berzerkValueMax = 100f;
 
     [SerializeField]
     private float m_fDeltaIncrementation;
@@ -77,7 +77,7 @@ public class BerzerkMode : MonoBehaviour
 
     }
 
-    public static void BonusSweep(float bonusValue)
+    public void BonusSweep(float bonusValue)
     {
         if (berzerkValue + bonusValue > berzerkValueMax)
         {
@@ -85,7 +85,20 @@ public class BerzerkMode : MonoBehaviour
         }
         else
         {
-            berzerkValue =+ bonusValue;
+            berzerkValue = +bonusValue;
         }
     }
+
+
+    //public static void BonusSweep(float bonusValue)
+    //{
+    //    if (berzerkValue + bonusValue > berzerkValueMax)
+    //    {
+    //        berzerkValue = berzerkValueMax;
+    //    }
+    //    else
+    //    {
+    //        berzerkValue =+ bonusValue;
+    //    }
+    //}
 }

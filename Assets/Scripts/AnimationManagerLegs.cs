@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class AnimationManagerLegs : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class AnimationManagerLegs : MonoBehaviour
 
 
 
-    public static int currentNumberOfFlower;
+    public int currentNumberOfFlower;
 
     private int stage = 0;
 
@@ -88,15 +89,15 @@ public class AnimationManagerLegs : MonoBehaviour
             if (stage < 2)
             {
                 GetComponent<Animator>().SetTrigger("nextStage");
-                if (Time.time > suffociationNextTime)
+                if (Time.timeSinceLevelLoad > suffociationNextTime)
                 {
                     SoundManager.PlaySoundOnce("voix_suffocation");
-                    suffociationNextTime = Time.time + suffocationDelay;
+                    suffociationNextTime = Time.timeSinceLevelLoad + suffocationDelay;
                 }
                 stage = 2;
             }
         }
-
+        
     }
 
 
@@ -137,7 +138,7 @@ public class AnimationManagerLegs : MonoBehaviour
     IEnumerator LaunchDeath()
     {
         yield return new WaitForSeconds(9);
-        Application.LoadLevel("_EndMenu");
+        SceneManager.LoadScene("_EndMenu");
         yield return 0;
     }
 

@@ -70,7 +70,7 @@ public class WindowsObjectsGenerator : MonoBehaviour
 
     void Update()
     {
-        if (Time.time > timeTillNextSpawn)
+        if (Time.timeSinceLevelLoad > timeTillNextSpawn)
         {
             int spawningPosition = Random.Range( 0, windowsPositions.Count );
             timeTillNextSpawn += Random.Range(minWaitTime, maxWaitTime);
@@ -87,7 +87,8 @@ public class WindowsObjectsGenerator : MonoBehaviour
         
         GameObject g = new GameObject();
         g.AddComponent<SpriteRenderer>();
-        int persoNumber = Random.Range(0, 3);
+        int persoNumber = Random.Range(0, 4);
+        Debug.Log(persoNumber);
         switch (persoNumber)
         {
             case 0:

@@ -19,9 +19,9 @@ public class VanAnimationController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {   
-        if (Time.time > nextAnimationTime)
+        if (Time.timeSinceLevelLoad > nextAnimationTime)
         {
-            nextAnimationTime = Time.time + Random.Range(minValueForSpawnRange, maxValueForSpawnRange);
+            nextAnimationTime = Time.timeSinceLevelLoad + Random.Range(minValueForSpawnRange, maxValueForSpawnRange);
             animation.Play();
         }
 	}

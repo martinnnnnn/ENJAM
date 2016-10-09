@@ -148,13 +148,13 @@ MonoBehaviour:
   maxWaitTime: 10
   eventLenght: 5
   slowingValue: 2
-  speedingValue: 20
+  speedingValue: 8
   fallingSpeed: 2
-  img_inversement: img_inversement
-  img_slow: img_slow
-  img_speed: img_speed
-  img_sweep: img_sweep
-  perso1: img_inversement
-  perso2: img_inversement
-  perso3: img_inversement
-  perso4: img_inversement
+  img_inversement: Malshia
+  img_slow: Malpiquant
+  img_speed: Boncafe
+  img_sweep: Bonmedoc
+  perso1: PeggySue
+  perso2: Svetlana
+  perso3: Claudia
+  perso4: MariePaule

@@ -13,6 +13,7 @@ public class Sweeper : MonoBehaviour
     [SerializeField]
     private float m_fSpeed;
 
+    private BerzerkMode ber;
 
     [SerializeField]
     private GameObject m_goFeedback;
@@ -27,7 +28,7 @@ public class Sweeper : MonoBehaviour
     {
         for (int i = 0; i < eventList.Count; ++i)
         {
-            if (Time.time > eventList[i].eventLenght)
+            if (Time.timeSinceLevelLoad > eventList[i].eventLenght)
             {
                 endWindowsObjectEffect(eventList[i]);
                // Destroy(eventList[i]);
@@ -111,7 +112,7 @@ public class Sweeper : MonoBehaviour
 
     private void startWindowsObjectEffect(WindowObjectStruct o)
     {
-        o.eventLenght += Time.time;
+        o.eventLenght += Time.timeSinceLevelLoad;
         eventList.Add(o);
 
         switch (o.type)
@@ -126,7 +127,8 @@ public class Sweeper : MonoBehaviour
                 m_fSpeed -= o.slowingValue;
                 break;
             case EventObject.SWEEP_BOOST:
-                BerzerkMode.BonusSweep(WindowsObjectsGenerator.berzerkBonus);
+                ber.BonusSweep(WindowsObjectsGenerator.berzerkBonus);
+               // BerzerkMode.BonusSweep(WindowsObjectsGenerator.berzerkBonus);
                 break;
         }
     }

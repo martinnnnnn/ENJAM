@@ -77,11 +77,11 @@ public class Stack : MonoBehaviour
 
     void Update()
     {
-        if (Time.time > nextActionTime)
+        if (Time.timeSinceLevelLoad > nextActionTime)
         {
             if (isCleaning && isCleaningBerzerk)
             {
-                nextActionTime = Time.time + periodBerzerk;
+                nextActionTime = Time.timeSinceLevelLoad + periodBerzerk;
                 currentFlowerCounter--;
                 if (changementCountFlowerCallBack != null)
                 {
@@ -90,7 +90,7 @@ public class Stack : MonoBehaviour
             }
             else if (isCleaning)
             {
-                nextActionTime = Time.time + periodNormal;
+                nextActionTime = Time.timeSinceLevelLoad + periodNormal;
                 currentFlowerCounter--;
                 if (changementCountFlowerCallBack != null)
                 {

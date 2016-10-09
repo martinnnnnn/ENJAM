@@ -125,9 +125,10 @@ MonoBehaviour:
   animSpeedNormal: 0.05
   animSpeedBerzerk: 0.025
   minValueForBerzerk: 50
+  berzerkValue: 0
   berzerkValueMax: 100
-  m_fDeltaIncrementation: 1
-  m_fDeltaDecrementation: 5
+  m_fDeltaIncrementation: 0.5
+  m_fDeltaDecrementation: 2
 --- !u!114 &114000010782552050
 MonoBehaviour:
   m_ObjectHideFlags: 1

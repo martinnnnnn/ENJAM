@@ -65,7 +65,7 @@ public class RandomInstantiate : MonoBehaviour
         m_fRandomFloat = Random.Range(-m_fGameWidth, m_fGameWidth);
         m_v2Position = new Vector2(m_fRandomFloat, this.transform.position.y);
 
-        if (Time.time > m_fNextActionTime)
+        if (Time.timeSinceLevelLoad > m_fNextActionTime)
         {
             m_fNextActionTime += m_fFrequence;
             GameObject _goLeaf;

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class TheScriptOfTheButon : MonoBehaviour {
 
@@ -8,18 +9,18 @@ public class TheScriptOfTheButon : MonoBehaviour {
 
     public void LoadMenu()
     {
-        Application.LoadLevel("_StartMenu");
+        SceneManager.LoadScene("_StartMenu");
     }
 
 
     public void LoadGame()
     {
-        Application.LoadLevel("_Game_1");
+        SceneManager.LoadScene("_Game_1");
     }
 
-    public void LoadEn()
-    {
-        Application.LoadLevel("_EndMenu");
-    }
+    //public void LoadEnd()
+    //{
+    //    Application.LoadLevel("_EndMenu");
+    //}
 
 }

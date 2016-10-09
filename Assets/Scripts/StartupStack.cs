@@ -53,11 +53,11 @@ public class StartupStack : MonoBehaviour
 
     void Update()
     {
-        if (Time.time > nextActionTime)
+        if (Time.timeSinceLevelLoad > nextActionTime)
         {
             if (isCleaning && isCleaningBerzerk)
             {
-                nextActionTime = Time.time + periodBerzerk;
+                nextActionTime = Time.timeSinceLevelLoad + periodBerzerk;
                 theButon.gameObject.transform.localScale = new Vector3(
                     theButon.gameObject.transform.localScale.x + 0.1f,
                     theButon.gameObject.transform.localScale.y + 0.1f,
@@ -66,7 +66,7 @@ public class StartupStack : MonoBehaviour
             }
             else if (isCleaning)
             {
-                nextActionTime = Time.time + periodNormal;
+                nextActionTime = Time.timeSinceLevelLoad + periodNormal;
                 theButon.gameObject.transform.localScale = new Vector3(
                     theButon.gameObject.transform.localScale.x + 0.1f,
                     theButon.gameObject.transform.localScale.y + 0.1f,
