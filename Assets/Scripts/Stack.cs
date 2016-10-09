@@ -53,7 +53,6 @@ public class Stack : MonoBehaviour
         {
             Destroy(c.gameObject);
             currentFlowerCounter++;
-            //Debug.Log("appel callback");
             if (changementCountFlowerCallBack != null)
             {
                 changementCountFlowerCallBack();
@@ -103,6 +102,7 @@ public class Stack : MonoBehaviour
         
         if (currentFlowerCounter <= 0)
         {
+            SoundManager.PlaySoundOnce("balais_01");
             Destroy(gameObject);
         }
     }
