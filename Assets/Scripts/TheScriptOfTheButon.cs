@@ -8,18 +8,18 @@ public class TheScriptOfTheButon : MonoBehaviour {
 
     public void LoadMenu()
     {
-        Application.LoadLevel("StartMenu");
+        Application.LoadLevel("_StartMenu");
     }
 
 
     public void LoadGame()
     {
-        Application.LoadLevel("test_martin3");
+        Application.LoadLevel("_Game");
     }
 
     public void LoadEn()
     {
-        Application.LoadLevel("EndMenu");
+        Application.LoadLevel("_EndMenu");
     }
 
 }
