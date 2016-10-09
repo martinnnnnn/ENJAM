@@ -33,7 +33,7 @@ public class Stack : MonoBehaviour
 
     public static void CreateStack(Vector2 position, int initialFlowerCounter)
     {
-        GameObject gObject = Instantiate(Resources.Load("StackPrefab")) as GameObject;
+        GameObject gObject = Instantiate(Resources.Load("prefabs/StackPrefab")) as GameObject;
         gObject.transform.position = position;
         gObject.GetComponent<Stack>().currentFlowerCounter = initialFlowerCounter;
     }

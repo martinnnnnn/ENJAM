@@ -48,20 +48,10 @@ public class Sweeper : MonoBehaviour
         {
             axe = 1;
         }
-        //else if (Input.GetKeyUp(KeyCode.Q))
-        //{
-        //    axe = 0;
-        //}
-        //else if (Input.GetKeyUp(KeyCode.D))
-        //{
-        //    axe = 0;
-        //}
-        //m_fTranslation = Input.GetAxis("Horizontal") * m_fSpeed * direction;
 
 
         m_fTranslation += axe * m_fSpeed * direction;
         m_fTranslation *= Time.deltaTime;
-        Debug.Log("vector : " + m_fTranslation);
         transform.Translate(m_fTranslation, 0f, 0f);
     }
 
@@ -106,6 +96,7 @@ public class Sweeper : MonoBehaviour
                 m_fSpeed -= o.slowingValue;
                 break;
             case EventObject.SWEEP_BOOST:
+                BerzerkMode.BonusSweep(WindowsObjectsGenerator.berzerkBonus);
                 break;
         }
     }

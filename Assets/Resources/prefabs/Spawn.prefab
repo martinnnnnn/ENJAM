@@ -52,5 +52,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_goFlower: {fileID: 123332, guid: 4cd73a171f6f7164fb7b5a8aea2e8b01, type: 2}
-  m_fGameWidth: 0
   m_fFrequence: 0
+  m_fTime: 0
+  m_fDeltaIncrementation: 0

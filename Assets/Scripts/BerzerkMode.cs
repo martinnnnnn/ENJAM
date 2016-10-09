@@ -13,52 +13,65 @@ public class BerzerkMode : MonoBehaviour
     public float animSpeedNormal = 0.1f;
     public float animSpeedBerzerk = 0.5f;
 
+    public float minValueForBerzerk = 50;
+    private bool canBerzerk = false;
 
-    public float berzerkValue = 50;
-    public float berzerkValueMax = 200;
-    
+    static private float berzerkValue = 0f;
+    static public float berzerkValueMax = 100f;
 
+    [SerializeField]
+    private float m_fDeltaIncrementation;
 
+    [SerializeField]
+    private float m_fDeltaDecrementation;
 
 
     // Use this for initialization
-    void Awake ()
+    void Awake()
     {
         m_iProgressBarImage = m_goProgressBar.GetComponent<Image>();
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
         if (berzerkValue < berzerkValueMax)
         {
-            berzerkValue++;
+            berzerkValue += m_fDeltaIncrementation;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+       
+        if (berzerkValue >= m_fDeltaDecrementation)
         {
-            //spriteanim.stopCoroutine();
-            if (berzerkValue > 3)
+            if (Input.GetKey(KeyCode.Space))
             {
-                berzerkValue -= 3;
+                berzerkValue -= m_fDeltaDecrementation;
                 Stack.isCleaningBerzerk = true;
-                //spriteanim.SecsPerFrame = animSpeedBerzerk;
-                //spriteanim.PlayAnimation(animSpeedBerzerk);
             }
             else
             {
                 Stack.isCleaningBerzerk = false;
             }
+            
         }
-        else if (Input.GetKeyUp(KeyCode.Space))
+        else
         {
             Stack.isCleaningBerzerk = false;
-            //spriteanim.SecsPerFrame = animSpeedNormal;
-            //spriteanim.PlayAnimation(animSpeedNormal);
         }
 
         m_iProgressBarImage.fillAmount = berzerkValue / berzerkValueMax;
-        Debug.Log(m_iProgressBarImage.fillAmount);
 
+    }
+
+    public static void BonusSweep(float bonusValue)
+    {
+        if (berzerkValue + bonusValue > berzerkValueMax)
+        {
+            berzerkValue = berzerkValueMax;
+        }
+        else
+        {
+            berzerkValue =+ bonusValue;
+        }
     }
 }
