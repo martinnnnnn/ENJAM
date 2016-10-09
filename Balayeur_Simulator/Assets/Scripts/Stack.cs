@@ -96,14 +96,17 @@ public class Stack : MonoBehaviour
         if (currentFlowerCounter < level2)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = sprite1;
+            gameObject.transform.position = new Vector3(transform.position.x, -2.8f, transform.position.z);
         }
         else if (currentFlowerCounter >= level2 && currentFlowerCounter < level3)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = sprite2;
+            gameObject.transform.position = new Vector3(transform.position.x, -2.8f, transform.position.z);
         }
         else
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = sprite3;
+            gameObject.transform.position = new Vector3(transform.position.x, -2.8f, transform.position.z);
         }
     }
 }
