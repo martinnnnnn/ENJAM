@@ -10,6 +10,7 @@ public class StartupStack : MonoBehaviour
     public float periodNormal = 1.0f;
     public float periodBerzerk = 0.5f;
 
+    public GameObject theButon;
 
     [HideInInspector]
     public int currentFlowerCounter = 10;
@@ -23,6 +24,11 @@ public class StartupStack : MonoBehaviour
     private float nextActionTime = 0.0f;
 
 
+    void Start()
+    {
+        handleLevel();
+        theButon.transform.localScale = new Vector2(0.0f, 0.0f);
+    }
 
 
 
@@ -50,11 +56,19 @@ public class StartupStack : MonoBehaviour
             if (isCleaning && isCleaningBerzerk)
             {
                 nextActionTime = Time.time + periodBerzerk;
+                theButon.gameObject.transform.localScale = new Vector3(
+                    theButon.gameObject.transform.localScale.x + 0.1f,
+                    theButon.gameObject.transform.localScale.y + 0.1f,
+                    theButon.gameObject.transform.localScale.z + 0.1f);
                 currentFlowerCounter--;
             }
             else if (isCleaning)
             {
                 nextActionTime = Time.time + periodNormal;
+                theButon.gameObject.transform.localScale = new Vector3(
+                    theButon.gameObject.transform.localScale.x + 0.1f,
+                    theButon.gameObject.transform.localScale.y + 0.1f,
+                    theButon.gameObject.transform.localScale.z + 0.1f);
                 currentFlowerCounter--;
             }
             handleLevel();
@@ -76,7 +90,7 @@ public class StartupStack : MonoBehaviour
         }
         else
         {
-            gameObject.GetComponent<SpriteRenderer>().sprite = spriteSmallStack;
+            gameObject.GetComponent<SpriteRenderer>().sprite = spriteMediumStack;
             gameObject.transform.position = new Vector3(transform.position.x, -2.8f, transform.position.z);
         }
     }
