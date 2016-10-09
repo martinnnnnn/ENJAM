@@ -1,27 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Stack : MonoBehaviour
+public class StartupStack : MonoBehaviour
 {
 
-    public int level2 = 3;
-    public int level3 = 5;
-
-    public string img_tas1;
-    public string img_tas2;
-    public string img_tas3;
-
-
+    public int level2 = 5;
+    public int level3 = 15;
+    
     public float periodNormal = 1.0f;
     public float periodBerzerk = 0.5f;
 
 
     [HideInInspector]
-    public int currentFlowerCounter;
+    public int currentFlowerCounter = 10;
 
-    private Sprite sprite1;
-    private Sprite sprite2;
-    private Sprite sprite3;
+    public Sprite spriteMediumStack;
+    public Sprite spriteSmallStack;
 
     private bool isCleaning = false;
     [HideInInspector]
@@ -29,30 +23,11 @@ public class Stack : MonoBehaviour
     private float nextActionTime = 0.0f;
 
 
-    public static void CreateStack(Vector2 position, int initialFlowerCounter)
-    {
-        GameObject gObject = Instantiate(Resources.Load("StackPrefab")) as GameObject;
-        gObject.transform.position = position;
-        gObject.GetComponent<Stack>().currentFlowerCounter = initialFlowerCounter;
-    }
-
-    void Start()
-    {
-        sprite1 = Resources.Load(img_tas1, typeof(Sprite)) as Sprite;
-        sprite2 = Resources.Load(img_tas2, typeof(Sprite)) as Sprite;
-        sprite3 = Resources.Load(img_tas3, typeof(Sprite)) as Sprite;
-    }
 
 
 
     void OnTriggerEnter2D(Collider2D c)
     {
-        if (c.gameObject.GetComponent<Flower>() != null)
-        {
-            Destroy(c.gameObject);
-            currentFlowerCounter++;
-            handleLevel();
-        }
         if (c.gameObject.GetComponent<Sweeper>() != null)
         {
             isCleaning = true;
@@ -96,17 +71,12 @@ public class Stack : MonoBehaviour
     {
         if (currentFlowerCounter < level2)
         {
-            gameObject.GetComponent<SpriteRenderer>().sprite = sprite1;
-            gameObject.transform.position = new Vector3(transform.position.x, -2.8f, transform.position.z);
-        }
-        else if (currentFlowerCounter >= level2 && currentFlowerCounter < level3)
-        {
-            gameObject.GetComponent<SpriteRenderer>().sprite = sprite2;
+            gameObject.GetComponent<SpriteRenderer>().sprite = spriteSmallStack;
             gameObject.transform.position = new Vector3(transform.position.x, -2.8f, transform.position.z);
         }
         else
         {
-            gameObject.GetComponent<SpriteRenderer>().sprite = sprite3;
+            gameObject.GetComponent<SpriteRenderer>().sprite = spriteSmallStack;
             gameObject.transform.position = new Vector3(transform.position.x, -2.8f, transform.position.z);
         }
     }
