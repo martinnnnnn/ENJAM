@@ -2,12 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 
-
-
-
-
-
-
 public class Sweeper : MonoBehaviour
 {
     
@@ -20,11 +14,13 @@ public class Sweeper : MonoBehaviour
     private float m_fSpeed;
 
 
+    [SerializeField]
+    private GameObject m_goFeedback;
+
     private int direction = 1;
 
-
-   
-
+    [SerializeField]
+    private Sprite[] m_sTabFeedBacksSprites;
 
     // Update is called once per frame
     void Update()
@@ -85,9 +81,39 @@ public class Sweeper : MonoBehaviour
 
             startWindowsObjectEffect(objCopy);
             Destroy(c.gameObject);
+
+            GameObject _goFeedBack;
+
+            switch(objOrigin.type)
+            {
+                case EventObject.INSERVEMENT:
+                    _goFeedBack = Instantiate(m_goFeedback, transform.position, transform.rotation)as GameObject;
+                    _goFeedBack.GetComponent<SpriteRenderer>().sprite = m_sTabFeedBacksSprites[0];
+                    Destroy(_goFeedBack, objOrigin.eventLenght);               
+                    break;
+                case EventObject.DEPLACEMENT_SPEED:
+                    _goFeedBack = Instantiate(m_goFeedback, transform.position, transform.rotation) as GameObject;
+                    _goFeedBack.GetComponent<SpriteRenderer>().sprite = m_sTabFeedBacksSprites[1];
+                    Destroy(_goFeedBack, objOrigin.eventLenght);
+                    break;
+                case EventObject.DEPLACEMENT_SLOW:
+                    _goFeedBack = Instantiate(m_goFeedback, transform.position, transform.rotation) as GameObject;
+                    _goFeedBack.GetComponent<SpriteRenderer>().sprite = m_sTabFeedBacksSprites[2];
+                    Destroy(_goFeedBack, objOrigin.eventLenght);
+                    break;
+                case EventObject.SWEEP_BOOST:
+                    _goFeedBack = Instantiate(m_goFeedback, transform.position, transform.rotation) as GameObject;
+                    _goFeedBack.GetComponent<SpriteRenderer>().sprite = m_sTabFeedBacksSprites[3];
+                    Destroy(_goFeedBack, objOrigin.eventLenght);
+                    break;
+            }
         }
     }
 
+    /*private void Fade(Color _cColor)
+    {
+        _goFeedBack.transform.Translate(Vector3.up * Time.time);
+    }*/
 
     private void startWindowsObjectEffect(WindowObjectStruct o)
     {
