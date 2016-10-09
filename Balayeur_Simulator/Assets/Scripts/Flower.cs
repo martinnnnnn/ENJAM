@@ -30,9 +30,12 @@ public class Flower : MonoBehaviour
     [SerializeField]
     private float m_fTime;
 
+    private bool m_bIsOnGround;
+
     // Use this for initialization
     void Start ()
     {
+        m_bIsOnGround = false;
         m_iRandomDirection = Random.Range(0, 2);
         m_fRandomRotation = Random.Range(m_fMinRotationBound, m_fMaxRotationBound);
         int _iIndice = Random.Range(0, m_sTabSprites.Length);
@@ -51,14 +54,29 @@ public class Flower : MonoBehaviour
 
     void Update()
     {
-        switch (m_iRandomDirection)
+        if (!m_bIsOnGround)
         {
-            case 0:
-                transform.Rotate(Vector3.forward * Time.deltaTime * m_fRandomRotation);
-                break;
-            case 1:
-                transform.Rotate(Vector3.back * Time.deltaTime * m_fRandomRotation);
-                break;
+            switch (m_iRandomDirection)
+            {
+                case 0:
+                    transform.Rotate(Vector3.forward * Time.deltaTime * m_fRandomRotation);
+                    break;
+                case 1:
+                    transform.Rotate(Vector3.back * Time.deltaTime * m_fRandomRotation);
+                    break;
+            }
+        }
+        else
+        {
+            transform.Rotate(Vector3.zero);
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.gameObject.CompareTag("ground"))
+        {
+            m_bIsOnGround = true;
         }
     }
 }

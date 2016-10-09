@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000014187255250}
   - 114: {fileID: 114000010365487506}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WindowObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
