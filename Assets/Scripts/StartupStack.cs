@@ -23,6 +23,8 @@ public class StartupStack : MonoBehaviour
     static public bool isCleaningBerzerk = false;
     private float nextActionTime = 0.0f;
 
+    [SerializeField]
+    private float m_fOffsetY;
 
     void Start()
     {
@@ -86,12 +88,12 @@ public class StartupStack : MonoBehaviour
         if (currentFlowerCounter < level2)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = spriteSmallStack;
-            gameObject.transform.position = new Vector3(transform.position.x, -2.8f, transform.position.z);
+            gameObject.transform.position = new Vector3(transform.position.x, m_fOffsetY, transform.position.z);
         }
         else
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = spriteMediumStack;
-            gameObject.transform.position = new Vector3(transform.position.x, -2.8f, transform.position.z);
+            gameObject.transform.position = new Vector3(transform.position.x, m_fOffsetY, transform.position.z);
         }
     }
 }
