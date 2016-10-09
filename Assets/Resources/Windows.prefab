@@ -149,7 +149,12 @@ MonoBehaviour:
   eventLenght: 5
   slowingValue: 2
   speedingValue: 20
+  fallingSpeed: 2
   img_inversement: img_inversement
   img_slow: img_slow
   img_speed: img_speed
   img_sweep: img_sweep
+  perso1: img_inversement
+  perso2: img_inversement
+  perso3: img_inversement
+  perso4: img_inversement

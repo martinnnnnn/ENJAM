@@ -68,27 +68,22 @@ public class AnimationManagerLegs : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             GetComponent<Animator>().SetInteger("direction", -1);
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKeyDown(KeyCode.D))
         {
             GetComponent<Animator>().SetInteger("direction", 1);
         }
-        else
+        else if (Input.GetKeyUp(KeyCode.Q))
         {
             GetComponent<Animator>().SetInteger("direction", 0);
         }
-        //if (Input.GetKeyDown(KeyCode.KeypadPlus))
-        //{
-        //    GetComponent<Animator>().SetTrigger("nextStage");
-        //}
-
-        //if (Input.GetKeyDown(KeyCode.KeypadMinus))
-        //{
-        //    GetComponent<Animator>().SetTrigger("previousStage");
-        //}
+        else if (Input.GetKeyUp(KeyCode.D))
+        {
+            GetComponent<Animator>().SetInteger("direction", 0);
+        }
 
 
     }
