@@ -534,17 +534,17 @@ Prefab:
     - target: {fileID: 114000010792821544, guid: 6d80d46ea8f27ac429b7fb9bd4a725fb,
         type: 2}
       propertyPath: img_inversement
-      value: MalusInverse
+      value: Malshia
       objectReference: {fileID: 0}
     - target: {fileID: 114000010792821544, guid: 6d80d46ea8f27ac429b7fb9bd4a725fb,
         type: 2}
       propertyPath: img_slow
-      value: Cactus
+      value: Malpiquant
       objectReference: {fileID: 0}
     - target: {fileID: 114000010792821544, guid: 6d80d46ea8f27ac429b7fb9bd4a725fb,
         type: 2}
       propertyPath: img_speed
-      value: Cafe
+      value: Boncafe
       objectReference: {fileID: 0}
     - target: {fileID: 114000010792821544, guid: 6d80d46ea8f27ac429b7fb9bd4a725fb,
         type: 2}
@@ -579,7 +579,7 @@ Prefab:
     - target: {fileID: 114000010792821544, guid: 6d80d46ea8f27ac429b7fb9bd4a725fb,
         type: 2}
       propertyPath: img_sweep
-      value: BonusJauge
+      value: Bonmedoc
       objectReference: {fileID: 0}
     - target: {fileID: 114000010792821544, guid: 6d80d46ea8f27ac429b7fb9bd4a725fb,
         type: 2}
