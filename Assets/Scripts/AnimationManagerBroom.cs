@@ -13,7 +13,7 @@ public class AnimationManagerBroom : MonoBehaviour
         {
             if (!played)
             {
-                SoundManager.PlaySoundOnce("voix_turbo_01");
+                SoundManager.PlaySoundOnce("balais_01");
                 played = true;
             }
             GetComponent<Animator>().SetBool("berzerk", true);

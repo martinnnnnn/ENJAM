@@ -71,7 +71,7 @@ public class AnimationManagerLegs : MonoBehaviour
         {
             if (stage == 2)
             {
-              //  GetComponent<Animator>().SetTrigger("previousStage");
+                GetComponent<Animator>().SetTrigger("previousStage");
                 SoundManager.PlaySoundOnce("voix_eternuement_01");
                 stage = 1;
             }
@@ -87,7 +87,7 @@ public class AnimationManagerLegs : MonoBehaviour
         {
             if (stage < 2)
             {
-                GetComponent<Animator>().SetBool("nextStage", true);
+                GetComponent<Animator>().SetTrigger("nextStage");
                 if (Time.time > suffociationNextTime)
                 {
                     SoundManager.PlaySoundOnce("voix_suffocation");

@@ -14,7 +14,7 @@ public class TheScriptOfTheButon : MonoBehaviour {
 
     public void LoadGame()
     {
-        Application.LoadLevel("_Game");
+        Application.LoadLevel("_Game_1");
     }
 
     public void LoadEn()

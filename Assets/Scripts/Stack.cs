@@ -53,7 +53,6 @@ public class Stack : MonoBehaviour
         {
             Destroy(c.gameObject);
             currentFlowerCounter++;
-            //Debug.Log("appel callback");
             if (changementCountFlowerCallBack != null)
             {
                 changementCountFlowerCallBack();
