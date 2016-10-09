@@ -63,7 +63,6 @@ public class Stack : MonoBehaviour
     {
         if (c.gameObject.GetComponent<Sweeper>() != null)
         {
-            Debug.Log("mescouilles");
             isCleaning = false;
         }
     }
@@ -75,7 +74,6 @@ public class Stack : MonoBehaviour
         {
             if (isCleaning && isCleaningBerzerk)
             {
-                Debug.Log("boosterCleaning");
                 nextActionTime = Time.time + periodBerzerk;
                 currentFlowerCounter--;
             }

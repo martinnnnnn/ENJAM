@@ -118,6 +118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a973c8f6c6e27147ad4314ab1c6da62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: 0.1
+  freqOfChange: 0
   m_fMinForceBound: 0
   m_fMaxForceBound: 0
 --- !u!61 &104735262
@@ -175,6 +177,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a973c8f6c6e27147ad4314ab1c6da62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: 0.1
+  freqOfChange: 0
   m_fMinForceBound: 0
   m_fMaxForceBound: 0
 --- !u!61 &231363835
@@ -263,8 +267,7 @@ Prefab:
       propertyPath: m_Size.x
       value: 1.1265526
       objectReference: {fileID: 0}
-    - target: {fileID: 212000012030270022, guid: 0c03fc0d0f3b97c4caa084913f00f884,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 76c24543fbcac4a4986902ef188e37aa,
@@ -327,102 +330,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 16
       objectReference: {fileID: 0}
-    - target: {fileID: 61000013417636668, guid: 0c03fc0d0f3b97c4caa084913f00f884,
-        type: 2}
-      propertyPath: m_Offset.y
-      value: 0.022561073
-      objectReference: {fileID: 0}
-    - target: {fileID: 61000013417636668, guid: 0c03fc0d0f3b97c4caa084913f00f884,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 3.3121738
-      objectReference: {fileID: 0}
-    - target: {fileID: 61000013417636668, guid: 0c03fc0d0f3b97c4caa084913f00f884,
-        type: 2}
-      propertyPath: m_Offset.x
-      value: -0.23630333
-      objectReference: {fileID: 0}
-    - target: {fileID: 61000013417636668, guid: 0c03fc0d0f3b97c4caa084913f00f884,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 1.1265526
-      objectReference: {fileID: 0}
-    - target: {fileID: 212000012030270022, guid: 0c03fc0d0f3b97c4caa084913f00f884,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 76c24543fbcac4a4986902ef188e37aa,
-        type: 3}
-    - target: {fileID: 4000013255255232, guid: 0c03fc0d0f3b97c4caa084913f00f884, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000013255255232, guid: 0c03fc0d0f3b97c4caa084913f00f884, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000013255255232, guid: 0c03fc0d0f3b97c4caa084913f00f884, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1000014252781420, guid: 0c03fc0d0f3b97c4caa084913f00f884, type: 2}
       propertyPath: m_Name
       value: Player (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 212000012030270022, guid: 0c03fc0d0f3b97c4caa084913f00f884,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 50000010903728936, guid: 0c03fc0d0f3b97c4caa084913f00f884,
-        type: 2}
-      propertyPath: m_Mass
-      value: 303.93
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0c03fc0d0f3b97c4caa084913f00f884, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &611828154 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000014252781420, guid: 0c03fc0d0f3b97c4caa084913f00f884,
-    type: 2}
-  m_PrefabInternal: {fileID: 611828153}
---- !u!114 &611828155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 611828154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fc22af7c3465e341ba87d244e4eaf13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AnimatedGameObject: {fileID: 0}
-  AnimationSets:
-  - AnimationName: animPiedsDroite
-    Anim_Sprites:
-    - {fileID: 21300000, guid: 76c24543fbcac4a4986902ef188e37aa, type: 3}
-    - {fileID: 21300000, guid: c81dc5a7a97db8b41ab142999ebd939c, type: 3}
-    - {fileID: 21300000, guid: 20c270e0d335dd64d9e73ead863e69c4, type: 3}
-    - {fileID: 21300000, guid: 1b340f2035cceeb4d861764e2dedd642, type: 3}
-    - {fileID: 21300000, guid: 1965da7ae50281746ad1fce739f03f4f, type: 3}
-    - {fileID: 21300000, guid: 2179087afeb174f49bd147d97cd5292d, type: 3}
-    - {fileID: 21300000, guid: 4e9b9cb129e7fab45b59e1db4432d7c9, type: 3}
-    - {fileID: 21300000, guid: 418d596e568e6ba4886af9c8489f21fc, type: 3}
-  - AnimationName: animPiedsGauche
-    Anim_Sprites:
-    - {fileID: 21300000, guid: 4680eab2edc3c14448e066a0751d27cd, type: 3}
-    - {fileID: 21300000, guid: 7b7d9df76a94ccd41a6e64f7c5067b93, type: 3}
-    - {fileID: 21300000, guid: 7b57cc14fc347f743ab579abb82c44d9, type: 3}
-    - {fileID: 21300000, guid: f0b3394e90fbf40468a196f0032e7a66, type: 3}
-    - {fileID: 21300000, guid: 4c6ed5eb14719af478fea88f92bfb5f8, type: 3}
-    - {fileID: 21300000, guid: 11c696956335b894b8786fe86b60f7f9, type: 3}
-    - {fileID: 21300000, guid: aae2fe7e38f7bce4db23a4175dc443fe, type: 3}
-    - {fileID: 21300000, guid: 19266e6eae5abcf408a085833019d411, type: 3}
-  - AnimationName: animPiedsGauche
-    Anim_Sprites:
-    - {fileID: 21300000, guid: 76c24543fbcac4a4986902ef188e37aa, type: 3}
 --- !u!1 &632360137
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,6 +365,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a973c8f6c6e27147ad4314ab1c6da62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: 0.1
+  freqOfChange: 0
   m_fMinForceBound: 0
   m_fMaxForceBound: 0
 --- !u!61 &632360139
@@ -508,6 +424,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a973c8f6c6e27147ad4314ab1c6da62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: 0.1
+  freqOfChange: 0
   m_fMinForceBound: 0
   m_fMaxForceBound: 0
 --- !u!61 &688558758
@@ -565,6 +483,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a973c8f6c6e27147ad4314ab1c6da62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: 0.1
+  freqOfChange: 0
   m_fMinForceBound: 0
   m_fMaxForceBound: 0
 --- !u!61 &734310744
@@ -836,6 +756,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a973c8f6c6e27147ad4314ab1c6da62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: 0.1
+  freqOfChange: 0
   m_fMinForceBound: 0
   m_fMaxForceBound: 0
 --- !u!61 &1119430870
@@ -865,6 +787,48 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
+--- !u!1001 &1437945409
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4000013144043642, guid: e9dbbac6710480942aa4e6924a25c17a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013144043642, guid: e9dbbac6710480942aa4e6924a25c17a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013144043642, guid: e9dbbac6710480942aa4e6924a25c17a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013144043642, guid: e9dbbac6710480942aa4e6924a25c17a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013144043642, guid: e9dbbac6710480942aa4e6924a25c17a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013144043642, guid: e9dbbac6710480942aa4e6924a25c17a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013144043642, guid: e9dbbac6710480942aa4e6924a25c17a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013144043642, guid: e9dbbac6710480942aa4e6924a25c17a, type: 2}
+      propertyPath: m_RootOrder
+      value: 21
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: e9dbbac6710480942aa4e6924a25c17a, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1531716529
 Prefab:
   m_ObjectHideFlags: 0
@@ -1053,6 +1017,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a973c8f6c6e27147ad4314ab1c6da62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: 0.1
+  freqOfChange: 0
   m_fMinForceBound: 0
   m_fMaxForceBound: 0
 --- !u!61 &1590913885
@@ -1110,6 +1076,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a973c8f6c6e27147ad4314ab1c6da62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: 0.1
+  freqOfChange: 0
   m_fMinForceBound: 0
   m_fMaxForceBound: 0
 --- !u!61 &1650976962
@@ -1318,6 +1286,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a973c8f6c6e27147ad4314ab1c6da62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: 0.1
+  freqOfChange: 0
   m_fMinForceBound: 0
   m_fMaxForceBound: 0
 --- !u!61 &1773123804
@@ -1436,6 +1406,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a973c8f6c6e27147ad4314ab1c6da62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: 0.1
+  freqOfChange: 0
   m_fMinForceBound: 0
   m_fMaxForceBound: 0
 --- !u!61 &1983413512
