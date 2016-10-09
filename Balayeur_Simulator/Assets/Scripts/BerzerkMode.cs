@@ -12,7 +12,7 @@ public class BerzerkMode : MonoBehaviour
     public int berzerkValue = 50;
     public int berzerkValueMax = 200;
 
-    public SpriteAnim spriteanim;
+    public SpriteAnimLegs spriteanim;
 
 
 
