@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Stack : MonoBehaviour
 {
-
+    
     public int level2 = 3;
     public int level3 = 5;
 
@@ -14,7 +14,9 @@ public class Stack : MonoBehaviour
 
     public float periodNormal = 1.0f;
     public float periodBerzerk = 0.5f;
-
+    
+    [HideInInspector]
+    public bool isAlreadyTrigger = false;
 
     [HideInInspector]
     public int currentFlowerCounter;
