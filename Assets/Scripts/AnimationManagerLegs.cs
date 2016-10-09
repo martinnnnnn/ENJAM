@@ -6,6 +6,7 @@ public class AnimationManagerLegs : MonoBehaviour
 
     public int totalNumberOfFlowersLevel1 = 30;
     public int totalNumberOfFlowersLevel2 = 60;
+    public int totalNumberOfFlowersEnd = 60;
 
     private int stage = 0;
 
@@ -19,6 +20,8 @@ public class AnimationManagerLegs : MonoBehaviour
     }
 
 
+
+
     void triggerFlowerCount()
     {
         int numberOfFlowers = 0;
@@ -26,6 +29,11 @@ public class AnimationManagerLegs : MonoBehaviour
         foreach (Stack stack in FindObjectsOfType<Stack>())
         {
             numberOfFlowers += stack.currentFlowerCounter;
+        }
+
+        if (numberOfFlowers > totalNumberOfFlowersEnd)
+        {
+            Application.LoadLevel("EndMenu");
         }
 
 
@@ -67,6 +75,12 @@ public class AnimationManagerLegs : MonoBehaviour
 
     void Update()
     {
+        foreach (Stack stack in FindObjectsOfType<Stack>())
+        {
+            stack.changementCountFlowerCallBack += triggerFlowerCount;
+        }
+
+
 
         if (Input.GetKeyDown(KeyCode.Q))
         {

@@ -6,8 +6,20 @@ public class TheScriptOfTheButon : MonoBehaviour {
 	
 
 
-    public void LoadScene()
+    public void LoadMenu()
     {
-        Application.LoadLevel("test_sou");
+        Application.LoadLevel("_StartMenu");
     }
+
+
+    public void LoadGame()
+    {
+        Application.LoadLevel("_Game");
+    }
+
+    public void LoadEn()
+    {
+        Application.LoadLevel("_EndMenu");
+    }
+
 }

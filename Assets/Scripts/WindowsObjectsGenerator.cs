@@ -23,6 +23,7 @@ public class WindowsObjectsGenerator : MonoBehaviour
     
     public float speedingValue;
     public float fallingSpeed = 2;
+    public static float berzerkBonus = 30;
 
     public string img_inversement;
     public string img_slow;
@@ -71,14 +72,12 @@ public class WindowsObjectsGenerator : MonoBehaviour
     {
         if (Time.time > timeTillNextSpawn)
         {
-            int spawningPosition = Random.Range( 0, windowsPositions.Count - 1 );
+            int spawningPosition = Random.Range( 0, windowsPositions.Count );
             timeTillNextSpawn += Random.Range(minWaitTime, maxWaitTime);
             EventObject eventType = (EventObject)Random.Range(0, System.Enum.GetNames(typeof(EventObject)).Length - 1);
 
 
             StartCoroutine(windowObjectSpawing(windowsPositions[spawningPosition].transform.position, eventType));
-            
-
         }
     }
 
@@ -104,9 +103,6 @@ public class WindowsObjectsGenerator : MonoBehaviour
                 g.GetComponent<SpriteRenderer>().sprite = sprite_perso4;
                 break;
         }
-        
-        g.GetComponent<SpriteRenderer>().sprite = sprite_perso1;
-
 
         g.transform.position = new Vector3(
             position.x,
@@ -115,15 +111,26 @@ public class WindowsObjectsGenerator : MonoBehaviour
         g.GetComponent<SpriteRenderer>().sortingOrder = -5;
         g.transform.DOMove(new Vector3(position.x,position.y-0.3f,position.z),1.5f).OnComplete(() =>
         {
-            Destroy(g);
+            //Destroy(g);
+            StartCoroutine(PeopleDisapearing(g));
             CreateWindowsObjects(position, type);
         });
-
-        //yield return new WaitForSeconds(0.5f);
-        //CreateWindowsObjects(position, type);
+        
 
         yield return 0;
     }
+
+
+    IEnumerator PeopleDisapearing(GameObject g)
+    {
+        Vector3 position = g.transform.position;
+        g.transform.DOMove(new Vector3(position.x, position.y - 1.6f, position.z), 1.5f).OnComplete(() =>
+        {
+            Destroy(g);
+        });
+        yield return 0;
+    }
+
 
 
     public void CreateWindowsObjects(Vector2 position, EventObject type)

@@ -13,9 +13,11 @@ public class BerzerkMode : MonoBehaviour
     public float animSpeedNormal = 0.1f;
     public float animSpeedBerzerk = 0.5f;
 
+    public float minValueForBerzerk = 50;
+    private bool canBerzerk = false;
 
-    private float berzerkValue = 0f;
-    public float berzerkValueMax = 100f;
+    static private float berzerkValue = 0f;
+    static public float berzerkValueMax = 100f;
 
     [SerializeField]
     private float m_fDeltaIncrementation;
@@ -24,54 +26,52 @@ public class BerzerkMode : MonoBehaviour
     private float m_fDeltaDecrementation;
 
 
-
     // Use this for initialization
-    void Awake ()
+    void Awake()
     {
         m_iProgressBarImage = m_goProgressBar.GetComponent<Image>();
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
         if (berzerkValue < berzerkValueMax)
         {
             berzerkValue += m_fDeltaIncrementation;
         }
 
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-            //spriteanim.stopCoroutine();
+       
         if (berzerkValue >= m_fDeltaDecrementation)
         {
-            if(Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Space))
             {
                 berzerkValue -= m_fDeltaDecrementation;
                 Stack.isCleaningBerzerk = true;
             }
             else
             {
-                 Stack.isCleaningBerzerk = false;
+                Stack.isCleaningBerzerk = false;
             }
-
-                //spriteanim.SecsPerFrame = animSpeedBerzerk;
-                //spriteanim.PlayAnimation(animSpeedBerzerk);
-            }
+            
+        }
         else
         {
             Stack.isCleaningBerzerk = false;
         }
-//else if (Input.GetKeyUp(KeyCode.Space))
-//{
-//   Stack.isCleaningBerzerk = false;
-//spriteanim.SecsPerFrame = animSpeedNormal;
-//spriteanim.PlayAnimation(animSpeedNormal);
-//}
 
-
-m_iProgressBarImage.fillAmount = berzerkValue / berzerkValueMax;
-        Debug.Log(m_iProgressBarImage.fillAmount);
+        m_iProgressBarImage.fillAmount = berzerkValue / berzerkValueMax;
 
     }
-}
 
+    public static void BonusSweep(float bonusValue)
+    {
+        if (berzerkValue + bonusValue > berzerkValueMax)
+        {
+            berzerkValue = berzerkValueMax;
+        }
+        else
+        {
+            berzerkValue =+ bonusValue;
+        }
+    }
+}
