@@ -1,26 +1,31 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class BerzerkMode : MonoBehaviour
 {
 
+    [SerializeField]
+    private GameObject m_goProgressBar;
+
+    private Image m_iProgressBarImage;
 
     public float animSpeedNormal = 0.1f;
     public float animSpeedBerzerk = 0.5f;
 
 
-    public int berzerkValue = 50;
-    public int berzerkValueMax = 200;
+    public float berzerkValue = 50;
+    public float berzerkValueMax = 200;
     
 
 
 
 
     // Use this for initialization
-    void Start ()
+    void Awake ()
     {
-	
-	}
+        m_iProgressBarImage = m_goProgressBar.GetComponent<Image>();
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -51,6 +56,9 @@ public class BerzerkMode : MonoBehaviour
             //spriteanim.SecsPerFrame = animSpeedNormal;
             //spriteanim.PlayAnimation(animSpeedNormal);
         }
+
+        m_iProgressBarImage.fillAmount = berzerkValue / berzerkValueMax;
+        Debug.Log(m_iProgressBarImage.fillAmount);
 
     }
 }
