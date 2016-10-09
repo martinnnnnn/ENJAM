@@ -23,8 +23,8 @@ public class IncrementBounds : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(m_fLinearDragMinBound);
-        Debug.Log(m_fLinearDragMaxBound);
+        /*Debug.Log(m_fLinearDragMinBound);
+        Debug.Log(m_fLinearDragMaxBound);*/
     }
 
     void IncreaseBounds()
