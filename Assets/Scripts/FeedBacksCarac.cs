@@ -89,7 +89,7 @@ public class FeedBacksCarac : MonoBehaviour
         m_v3PlayerPos.z = 0f;
         //m_v3PlayerPos.y = 0f;
 
-        Debug.Log(m_v3PlayerPos);
+        //Debug.Log(m_v3PlayerPos);
 
         //transform.Translate(Vector3.up * Time.deltaTime /** m_fSpeed*/);
         transform.position = m_v3PlayerPos + new Vector3(m_fOffsetX, m_fOffsetY, 0f);
