@@ -14,10 +14,14 @@ public class BerzerkMode : MonoBehaviour
     public float animSpeedBerzerk = 0.5f;
 
 
-    public float berzerkValue = 50;
-    public float berzerkValueMax = 200;
-    
+    public float berzerkValue = 0f;
+    public float berzerkValueMax = 100f;
 
+    [SerializeField]
+    private float m_fDeltaIncrementation;
+
+    [SerializeField]
+    private float m_fDeltaDecrementation;
 
 
 
@@ -32,33 +36,42 @@ public class BerzerkMode : MonoBehaviour
     {
         if (berzerkValue < berzerkValueMax)
         {
-            berzerkValue++;
+            berzerkValue += m_fDeltaIncrementation;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
             //spriteanim.stopCoroutine();
-            if (berzerkValue > 3)
+        if (berzerkValue >= m_fDeltaDecrementation)
+        {
+            if(Input.GetKey(KeyCode.Space))
             {
-                berzerkValue -= 3;
+                berzerkValue -= m_fDeltaDecrementation;
                 Stack.isCleaningBerzerk = true;
-                //spriteanim.SecsPerFrame = animSpeedBerzerk;
-                //spriteanim.PlayAnimation(animSpeedBerzerk);
             }
             else
             {
-                Stack.isCleaningBerzerk = false;
+                 Stack.isCleaningBerzerk = false;
             }
-        }
-        else if (Input.GetKeyUp(KeyCode.Space))
+
+                //spriteanim.SecsPerFrame = animSpeedBerzerk;
+                //spriteanim.PlayAnimation(animSpeedBerzerk);
+            }
+        else
         {
             Stack.isCleaningBerzerk = false;
-            //spriteanim.SecsPerFrame = animSpeedNormal;
-            //spriteanim.PlayAnimation(animSpeedNormal);
         }
+//else if (Input.GetKeyUp(KeyCode.Space))
+//{
+//   Stack.isCleaningBerzerk = false;
+//spriteanim.SecsPerFrame = animSpeedNormal;
+//spriteanim.PlayAnimation(animSpeedNormal);
+//}
 
-        m_iProgressBarImage.fillAmount = berzerkValue / berzerkValueMax;
+
+m_iProgressBarImage.fillAmount = berzerkValue / berzerkValueMax;
         Debug.Log(m_iProgressBarImage.fillAmount);
 
     }
 }
+
