@@ -14,7 +14,7 @@ public class BerzerkMode : MonoBehaviour
     public float animSpeedBerzerk = 0.5f;
 
 
-    public float berzerkValue = 0f;
+    private float berzerkValue = 0f;
     public float berzerkValueMax = 100f;
 
     [SerializeField]
