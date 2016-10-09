@@ -1,12 +1,10 @@
 # Unity generated #
 # =============== #
-Temp/
-Obj/
-UnityGenerated/
-/Library/
-Steam/
-Assets/Saves/
-Assets/Saves.meta
+Balayeur_Simulateur/Temp/
+Balayeur_Simulateur/Obj/
+Balayeur_Simulateur/UnityGenerated/
+Balayeur_Simulateur/Library/
+Balayeur_Simulateur/Steam/
  
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
