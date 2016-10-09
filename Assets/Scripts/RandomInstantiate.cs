@@ -46,14 +46,14 @@ public class RandomInstantiate : MonoBehaviour
 
         //m_fPeriod = 0.1f;
         //m_iCurrentLeavesCpt = 0;
-        m_fFrequence = 1f;
+       // m_fFrequence = 1f;
         m_fNextActionTime = 0f;
         m_fGameWidth = Camera.main.orthographicSize * Screen.width / Screen.height;
 
         /*Debug.Log(m_fGameWidth*2f);
         Debug.Log(m_fGameWidth);*/
 
-        m_fDeltaIncrementation = 0.01f;
+        // m_fDeltaIncrementation = 0.01f;
         InvokeRepeating("IncreaseFrequence", m_fTime, m_fTime);
     }
 
