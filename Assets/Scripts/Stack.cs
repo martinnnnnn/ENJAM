@@ -51,11 +51,11 @@ public class Stack : MonoBehaviour
         if (c.gameObject.GetComponent<Flower>() != null)
         {
             Destroy(c.gameObject);
+            currentFlowerCounter++;
             if (changementCountFlowerCallBack != null)
             {
                 changementCountFlowerCallBack();
             }
-            currentFlowerCounter++;
             
             handleLevel();
         }
@@ -82,11 +82,19 @@ public class Stack : MonoBehaviour
             {
                 nextActionTime = Time.time + periodBerzerk;
                 currentFlowerCounter--;
+                if (changementCountFlowerCallBack != null)
+                {
+                    changementCountFlowerCallBack();
+                }
             }
             else if (isCleaning)
             {
                 nextActionTime = Time.time + periodNormal;
                 currentFlowerCounter--;
+                if (changementCountFlowerCallBack != null)
+                {
+                    changementCountFlowerCallBack();
+                }
             }
             handleLevel();
         }

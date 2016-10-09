@@ -40,18 +40,28 @@ public class Sweeper : MonoBehaviour
 
         }
         int axe = 0;
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKey(KeyCode.Q))
         {
             axe = -1;
         }
-        else if (Input.GetKeyDown(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D))
         {
             axe = 1;
         }
+        //else if (Input.GetKeyUp(KeyCode.Q))
+        //{
+        //    axe = 0;
+        //}
+        //else if (Input.GetKeyUp(KeyCode.D))
+        //{
+        //    axe = 0;
+        //}
         //m_fTranslation = Input.GetAxis("Horizontal") * m_fSpeed * direction;
-        Debug.Log(Input.GetAxis("Horizontal"));
-        m_fTranslation = axe * m_fSpeed * direction;
+
+
+        m_fTranslation += axe * m_fSpeed * direction;
         m_fTranslation *= Time.deltaTime;
+        Debug.Log("vector : " + m_fTranslation);
         transform.Translate(m_fTranslation, 0f, 0f);
     }
 

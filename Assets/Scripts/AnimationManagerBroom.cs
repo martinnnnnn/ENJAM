@@ -30,10 +30,10 @@ public class AnimationManagerBroom : MonoBehaviour
         {
             GetComponent<Animator>().SetBool("left", false);
         }
-        //else
-        //{
-        //    GetComponent<Animator>().SetBool("left", false);
-        //}
+        else if(Input.GetKeyUp(KeyCode.Q))
+        {
+            GetComponent<Animator>().SetBool("left", false);
+        }
 
     }
 }
