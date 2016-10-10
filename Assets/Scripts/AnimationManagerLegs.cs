@@ -52,8 +52,9 @@ public class AnimationManagerLegs : MonoBehaviour
             if (!alreadyDieded)
             {
                 alreadyDieded = false;
-                StartCoroutine(LaunchDeath());
-                SoundManager.PlaySoundOnce("game_over");
+                SceneManager.LoadScene("_EndMenu");
+                //StartCoroutine(LaunchDeath());
+                //SoundManager.PlaySoundOnce("game_over");
             }
             
         }
@@ -135,12 +136,12 @@ public class AnimationManagerLegs : MonoBehaviour
     }
 
   
-    IEnumerator LaunchDeath()
-    {
-        yield return new WaitForSeconds(9);
-        SceneManager.LoadScene("_EndMenu");
-        yield return 0;
-    }
+    //IEnumerator LaunchDeath()
+    //{
+    //    yield return new WaitForSeconds(9);
+    //    SceneManager.LoadScene("_EndMenu");
+    //    yield return 0;
+    //}
 
 }
 
